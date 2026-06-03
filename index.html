@@ -403,12 +403,133 @@
         <tbody>
           <tr><td class="rowname">GPT-5.4(codex)</td><td>0.543</td><td>0.330</td><td>0.251</td><td>0.229</td><td>0.818</td></tr>
           <tr><td class="rowname">GPT-5.5(codex)</td><td class="best">0.602</td><td>0.283</td><td>0.223</td><td>0.227</td><td class="best">0.853</td></tr>
-          <tr><td class="rowname">Opus(claude code)</td><td>0.595</td><td class="best">0.336</td><td class="best">0.261</td><td class="best">0.250</td><td>0.764</td></tr>
-          <tr><td class="rowname">Sonnet(claude code)</td><td>0.505</td><td>0.313</td><td>0.233</td><td>0.234</td><td>0.715</td></tr>
+          <tr><td class="rowname">Opus 4.7(claude code)</td><td>0.595</td><td class="best">0.336</td><td class="best">0.261</td><td class="best">0.250</td><td>0.764</td></tr>
+          <tr><td class="rowname">Sonnet 4.6 (claude code)</td><td>0.505</td><td>0.313</td><td>0.233</td><td>0.234</td><td>0.715</td></tr>
         </tbody>
         <caption>Four agent systems from two model families and two harnesses. Bold marks the best value per column.</caption>
       </table>
     </div>
+
+    <h3 class="tabletitle">Condition C4 — per-model breakdown</h3>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Loc</th><th>Behavior</th><th>Combined</th><th>Comb. median</th><th>CLIP</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="rowname">GPT-5.4(codex)</td><td>0.595</td><td class="best">0.415</td><td class="best">0.324</td><td class="best">0.310</td><td>—</td></tr>
+          <tr><td class="rowname">GPT-5.5(codex)</td><td>0.610</td><td>0.278</td><td>0.233</td><td>0.185</td><td>—</td></tr>
+          <tr><td class="rowname">Opus 4.7(claude code)</td><td>0.618</td><td>0.303</td><td>0.246</td><td>0.228</td><td>—</td></tr>
+          <tr><td class="rowname">Opus 4.8(claude code)</td><td class="best">0.722</td><td>0.313</td><td>0.263</td><td>0.240</td><td>—</td></tr>
+          <tr><td class="rowname">Sonnet 4.6(claude code)</td><td>0.577</td><td>0.315</td><td>0.237</td><td>0.237</td><td>—</td></tr>
+        </tbody>
+        <caption>Condition C4 only (richest input · free stack), per model. CLIP not recomputed for this view. Bold marks the best value per column.</caption>
+      </table>
+    </div>
+
+    <h3 class="tabletitle">Combined score across harness versions (C4)</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+      <!-- Codex family panel  (y-axis 0–0.35) -->
+      <figure style="flex:1 1 360px;margin:0;">
+        <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 6px 4px;">
+          <svg viewBox="0 0 460 300" width="100%" font-family="var(--mono)">
+            <!-- y gridlines -->
+            <g stroke="#efece4" stroke-width="1">
+              <line x1="44" y1="54"  x2="444" y2="54"/>
+              <line x1="44" y1="121" x2="444" y2="121"/>
+              <line x1="44" y1="189" x2="444" y2="189"/>
+            </g>
+            <g fill="#9a9486" font-size="11" text-anchor="end">
+              <text x="39" y="58">0.30</text>
+              <text x="39" y="125">0.20</text>
+              <text x="39" y="193">0.10</text>
+              <text x="39" y="259">0.00</text>
+            </g>
+            <!-- axes -->
+            <line x1="44" y1="20" x2="44" y2="256" stroke="#d8d4c8"/>
+            <line x1="44" y1="256" x2="444" y2="256" stroke="#d8d4c8"/>
+            <!-- GPT-5.4 line: 0.116→0.128→0.134 -->
+            <polyline points="110,104 244,38 378,128" fill="none" stroke="#c2410c" stroke-width="2.5"/>
+            <circle cx="110" cy="104" r="4.5" fill="#c2410c"/>
+            <circle cx="244" cy="38"  r="4.5" fill="#c2410c"/>
+            <circle cx="378" cy="128" r="4.5" fill="#c2410c"/>
+            <!-- GPT-5.5 line: 0.128→0.134 -->
+            <polyline points="244,99 378,118" fill="none" stroke="#5c93b8" stroke-width="2.5" stroke-dasharray="5 3"/>
+            <circle cx="244" cy="99"  r="4.5" fill="#5c93b8"/>
+            <circle cx="378" cy="118" r="4.5" fill="#5c93b8"/>
+            <!-- value labels -->
+            <g font-size="11" font-weight="700">
+              <text x="110" y="96"  text-anchor="middle" fill="#c2410c">0.225</text>
+              <text x="244" y="30"  text-anchor="middle" fill="#c2410c">0.324</text>
+              <text x="378" y="142" text-anchor="middle" fill="#c2410c">0.190</text>
+              <text x="236" y="96"  text-anchor="end" fill="#5c93b8">0.233</text>
+              <text x="378" y="110" text-anchor="middle" fill="#5c93b8">0.205</text>
+            </g>
+            <!-- x labels -->
+            <g fill="#5b6270" font-size="12" text-anchor="middle">
+              <text x="110" y="273">0.116</text>
+              <text x="244" y="273">0.128</text>
+              <text x="378" y="273">0.134</text>
+            </g>
+            <text x="244" y="293" fill="#9a9486" font-size="11" text-anchor="middle">Codex-CLI harness version →</text>
+            <!-- legend -->
+            <g font-size="11">
+              <circle cx="296" cy="32" r="4.5" fill="#c2410c"/><text x="306" y="36" fill="#15171c">GPT-5.4</text>
+              <circle cx="368" cy="32" r="4.5" fill="#5c93b8"/><text x="378" y="36" fill="#15171c">GPT-5.5</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Codex-CLI — GPT-5.4 peaks at 0.128 (0.324) then drops (0.116→0.134: 0.225→0.190); GPT-5.5 0.233→0.205. The 0.128 column is the original benchmark data.</figcaption>
+      </figure>
+      <!-- Claude Code family panel  (y-axis 0–0.35) -->
+      <figure style="flex:1 1 360px;margin:0;">
+        <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 6px 4px;">
+          <svg viewBox="0 0 460 300" width="100%" font-family="var(--mono)">
+            <g stroke="#efece4" stroke-width="1">
+              <line x1="44" y1="54"  x2="444" y2="54"/>
+              <line x1="44" y1="121" x2="444" y2="121"/>
+              <line x1="44" y1="189" x2="444" y2="189"/>
+            </g>
+            <g fill="#9a9486" font-size="11" text-anchor="end">
+              <text x="39" y="58">0.30</text>
+              <text x="39" y="125">0.20</text>
+              <text x="39" y="193">0.10</text>
+              <text x="39" y="259">0.00</text>
+            </g>
+            <line x1="44" y1="20" x2="44" y2="256" stroke="#d8d4c8"/>
+            <line x1="44" y1="256" x2="444" y2="256" stroke="#d8d4c8"/>
+            <!-- Sonnet 4.6 line: 2.1.58→2.1.126→2.1.152 -->
+            <polyline points="110,118 244,96 378,89" fill="none" stroke="#3f9d8e" stroke-width="2.5"/>
+            <circle cx="110" cy="118" r="4.5" fill="#3f9d8e"/>
+            <circle cx="244" cy="96"  r="4.5" fill="#3f9d8e"/>
+            <circle cx="378" cy="89"  r="4.5" fill="#3f9d8e"/>
+            <!-- Opus dots at 2.1.126: 4.7 (gold) and 4.8 (accent) -->
+            <circle cx="244" cy="90" r="4.5" fill="#c98a3a"/>
+            <circle cx="244" cy="79" r="4.5" fill="#c2410c"/>
+            <g font-size="11" font-weight="700">
+              <text x="110" y="110" text-anchor="middle" fill="#3f9d8e">0.205</text>
+              <text x="378" y="81"  text-anchor="middle" fill="#3f9d8e">0.248</text>
+              <text x="236" y="108" text-anchor="end" fill="#3f9d8e">0.237</text>
+              <text x="252" y="93"  fill="#c98a3a">0.246</text>
+              <text x="252" y="76"  fill="#c2410c">0.263</text>
+            </g>
+            <g fill="#5b6270" font-size="12" text-anchor="middle">
+              <text x="110" y="273">2.1.58</text>
+              <text x="244" y="273">2.1.126</text>
+              <text x="378" y="273">2.1.152</text>
+            </g>
+            <text x="244" y="293" fill="#9a9486" font-size="11" text-anchor="middle">Claude Code harness version →</text>
+            <g font-size="11">
+              <circle cx="214" cy="32" r="4.5" fill="#3f9d8e"/><text x="224" y="36" fill="#15171c">Sonnet 4.6</text>
+              <circle cx="300" cy="32" r="4.5" fill="#c98a3a"/><text x="310" y="36" fill="#15171c">Opus 4.7</text>
+              <circle cx="372" cy="32" r="4.5" fill="#c2410c"/><text x="382" y="36" fill="#15171c">Opus 4.8</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Claude Code — Sonnet 4.6 rises monotonically 0.205→0.237→0.248 (2.1.58→2.1.126→2.1.152); at 2.1.126 Opus 4.7=0.246, Opus 4.8=0.263. The 2.1.126 column is the original benchmark data.</figcaption>
+      </figure>
+    </div>
+    <p class="muted" style="font-size:14px;margin-top:10px;">Mean C4 combined score (n=10, failures scored 0) vs. agent harness version. Codex-CLI and Claude Code use independent version schemes, shown as separate panels. The middle column in each panel (Codex 0.128.0, Claude 2.1.126) is the original benchmark run. Newer harness lifts Sonnet 4.6 monotonically; for GPT-5.4 the 0.128 build is the high point.</p>
 
     <div class="findings" style="margin-top:24px;">
       <div class="finding">
