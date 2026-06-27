@@ -63,6 +63,21 @@
   .score{font-family:var(--mono);font-weight:700;color:var(--ink);text-align:right;width:74px;font-size:15.5px;}
   .note{font-size:13px;margin-top:14px;}
 
+  /* effort gauges */
+  .efftbl{margin-top:16px;display:flex;flex-direction:column;gap:11px;}
+  .eff{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .eff .dots{display:inline-flex;gap:6px;align-items:center;background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;padding:6px 11px;}
+  .eff .dots i{width:9px;height:9px;border-radius:50%;background:#e4e0d5;display:inline-block;}
+  .eff .dots i.on{background:#c4bdac;}
+  .eff .dots i.cur{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  .eff .dots i.maxed{background:#6d28d9;box-shadow:0 0 0 3px #efe6fb;}
+  .eff .efflab{font-family:var(--mono);font-size:12px;color:var(--ink);min-width:74px;}
+  .eff .efflab b{color:var(--accent);}
+  .eff .efflab .maxc{color:#6d28d9;}
+  .eff .effmodels{font-size:13.5px;color:var(--muted);}
+  .eff .effmodels img{width:15px;height:15px;object-fit:contain;vertical-align:-3px;margin-right:6px;}
+
   /* chart */
   figure{margin:0;} figcaption{font-size:13px;color:var(--muted);margin-top:9px;font-style:italic;}
   pre.bib{background:var(--ink);color:#e8e6df;font-family:var(--mono);font-size:12.5px;line-height:1.6;
@@ -101,19 +116,46 @@
       </thead>
       <tbody>
         <tr class="r1"><td class="rank">1</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="barcell"><div class="bar"><i style="width:100%"></i></div></td><td class="score">0.274</td></tr>
-        <tr class="r2"><td class="rank">2</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="barcell"><div class="bar"><i style="width:96.1%"></i></div></td><td class="score">0.263</td></tr>
-        <tr class="r3"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="barcell"><div class="bar"><i style="width:90.6%"></i></div></td><td class="score">0.248</td></tr>
-        <tr><td class="rank">4</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="barcell"><div class="bar"><i style="width:89.8%"></i></div></td><td class="score">0.246</td></tr>
-        <tr><td class="rank">5</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="barcell"><div class="bar"><i style="width:77.4%"></i></div></td><td class="score">0.212</td></tr>
-        <tr><td class="rank">6</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134</span></td><td class="barcell"><div class="bar"><i style="width:74.8%"></i></div></td><td class="score">0.205</td></tr>
-        <tr><td class="rank">7</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="barcell"><div class="bar"><i style="width:71.0%"></i></div></td><td class="score">0.194</td></tr>
-        <tr><td class="rank">8</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="barcell"><div class="bar"><i style="width:69.5%"></i></div></td><td class="score">0.190</td></tr>
-        <tr><td class="rank">9</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity · medium</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.145</td></tr>
-        <tr><td class="rank">10</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="barcell"><div class="bar"><i style="width:38.2%"></i></div></td><td class="score">0.105</td></tr>
+        <tr class="r2"><td class="rank">2</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><span class="model">GLM-5.2</span></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="barcell"><div class="bar"><i style="width:98.2%"></i></div></td><td class="score">0.269</td></tr>
+        <tr class="r3"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="barcell"><div class="bar"><i style="width:96.1%"></i></div></td><td class="score">0.263</td></tr>
+        <tr><td class="rank">4</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="barcell"><div class="bar"><i style="width:90.6%"></i></div></td><td class="score">0.248</td></tr>
+        <tr><td class="rank">5</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="barcell"><div class="bar"><i style="width:89.8%"></i></div></td><td class="score">0.246</td></tr>
+        <tr><td class="rank">6</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="barcell"><div class="bar"><i style="width:77.4%"></i></div></td><td class="score">0.212</td></tr>
+        <tr><td class="rank">7</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134</span></td><td class="barcell"><div class="bar"><i style="width:74.8%"></i></div></td><td class="score">0.205</td></tr>
+        <tr><td class="rank">8</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="barcell"><div class="bar"><i style="width:71.0%"></i></div></td><td class="score">0.194</td></tr>
+        <tr><td class="rank">9</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="barcell"><div class="bar"><i style="width:69.5%"></i></div></td><td class="score">0.190</td></tr>
+        <tr><td class="rank">10</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity · medium</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.145</td></tr>
+        <tr><td class="rank">11</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="barcell"><div class="bar"><i style="width:38.2%"></i></div></td><td class="score">0.105</td></tr>
       </tbody>
     </table>
     <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release</strong> (Codex-CLI 0.134 / Claude Code 2.1.152), with a free choice of stack. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
-    <p class="muted note">S ∈ [0, 1]; higher is better. Scored with the corrected README page-mapping. Opus 4.7 and GPT-5.4 entries come from externally-provided result sets that could not be re-verified against the fixed parser. Gemini 3.5 Flash (High) and Gemini 3.1 Pro (High) are omitted pending complete runs (only 7/10 and 5/10 tasks available).</p>
+    <p class="muted note">S ∈ [0, 1]; higher is better. Scored with the corrected README page-mapping. GLM-5.2 is served via z.ai's Anthropic-compatible endpoint inside Claude Code 2.1.152 at its maximum reasoning effort (all 10/10 tasks); its ecommerce task showed high run-to-run variance, so that cell is averaged over 3 runs (0.67 / 0.39 / 0.34 → 0.47). Opus 4.7 and GPT-5.4 entries come from externally-provided result sets that could not be re-verified against the fixed parser. Gemini 3.5 Flash (High) and Gemini 3.1 Pro (High) are omitted pending complete runs (only 7/10 and 5/10 tasks available).</p>
+
+    <div class="h2sub" style="font-size:18px;margin-top:30px;">Reasoning effort used</div>
+    <p class="lead" style="font-size:15px;">Each harness exposes a different reasoning-effort ladder, so levels aren't directly comparable. The highlighted dot marks the level each model ran at; the row length shows the granularity available. Notably, <strong>GLM-5.2 ran at its ceiling (max)</strong>, while the Claude and Codex models still had headroom above the level used.</p>
+    <div class="efftbl">
+      <div class="eff">
+        <span class="dots" title="High — level 4 of 6"><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i></span>
+        <span class="efflab"><b>High</b> · 4 / 6</span>
+        <span class="effmodels"><img src="figs/claude-logo-png.png" alt="Claude">Claude Code <span class="muted">(6 levels)</span> — fable-5, Opus 4.8, Opus 4.7, Sonnet 4.6, Haiku 4.5</span>
+      </div>
+      <div class="eff">
+        <span class="dots" title="Medium — level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span>
+        <span class="efflab"><b>Medium</b> · 3 / 4</span>
+        <span class="effmodels"><img src="figs/ChatGPT-Logo.png" alt="OpenAI">Codex <span class="muted">(4 levels)</span> — GPT-5.5, GPT-5.4, GPT-5.4-mini</span>
+      </div>
+      <div class="eff">
+        <span class="dots" title="Max — level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span>
+        <span class="efflab"><span class="maxc"><b>Max</b></span> · 2 / 2</span>
+        <span class="effmodels"><img src="figs/glm-logo.svg" alt="Zhipu GLM">z.ai GLM-5.2 <span class="muted">(2 levels: high · max)</span> — ran at max</span>
+      </div>
+      <div class="eff">
+        <span class="dots" title="Medium — level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span>
+        <span class="efflab"><b>Medium</b> · 2 / 3</span>
+        <span class="effmodels"><img src="figs/anti-gravity.png" alt="Antigravity">Antigravity <span class="muted">(3 levels: low · medium · high)</span> — Gemini 3.5 Flash</span>
+      </div>
+    </div>
+    <p class="muted note">Cursor Composer 2.5 runs at its agent default; its effort ladder isn't published in a directly comparable form.</p>
   </section>
 
   <!-- ============ HARNESS TREND ============ -->
