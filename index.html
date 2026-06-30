@@ -55,7 +55,12 @@
   .lb .lblogo{width:20px;height:20px;object-fit:contain;vertical-align:-5px;margin-right:9px;}
   .lb .fam{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--muted);
     background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-left:2px;}
-  .lb .barcell{width:34%;min-width:130px;}
+  .lb .barcell{width:30%;min-width:120px;}
+  .lb .toks{font-family:var(--mono);font-weight:700;color:var(--ink-soft);text-align:right;font-size:13.5px;white-space:nowrap;width:66px;}
+  .lb th.tokh{text-align:right;}
+  .lbsort{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:14px;margin-bottom:-6px;font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .lbsort select{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:var(--card);
+    border:1px solid var(--line);border-radius:7px;padding:5px 9px;cursor:pointer;}
   .lb .effcell{white-space:nowrap;}
   .lb .gdots{display:inline-flex;gap:3px;align-items:center;vertical-align:middle;}
   .lb .gdots i{width:6px;height:6px;border-radius:50%;background:#e6e2d7;display:inline-block;}
@@ -118,23 +123,31 @@
     <h2>Leaderboard</h2>
     <div class="h2sub">Combined score — condition C4 · latest harness</div>
 
+    <div class="lbsort">
+      <label for="lbsort">Sort by</label>
+      <select id="lbsort">
+        <option value="score">Combined score (best first)</option>
+        <option value="tokens">Token usage (leanest first)</option>
+      </select>
+    </div>
+
     <table class="lb">
       <thead>
-        <tr><th>#</th><th>Model</th><th>Harness</th><th>Effort</th><th class="barcell">Combined score</th><th style="text-align:right">S</th></tr>
+        <tr><th>#</th><th>Model</th><th>Harness</th><th>Effort</th><th class="barcell">Combined score</th><th style="text-align:right">S</th><th class="tokh" title="Median billable tokens per task — lower is leaner. See Cost &amp; speed.">Tokens</th></tr>
       </thead>
       <tbody>
-        <tr class="r1"><td class="rank">1</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100%"></i></div></td><td class="score">0.274</td></tr>
-        <tr class="r2"><td class="rank">2</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><span class="model">GLM-5.2</span></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="effcell"><span class="gdots" title="Max · level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span><span class="efftxt" style="color:#6d28d9">Max</span></td><td class="barcell"><div class="bar"><i style="width:98.2%"></i></div></td><td class="score">0.269</td></tr>
-        <tr class="r3"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:96.1%"></i></div></td><td class="score">0.263</td></tr>
-        <tr><td class="rank">4</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:95.6%"></i></div></td><td class="score">0.262</td></tr>
-        <tr><td class="rank">5</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:90.6%"></i></div></td><td class="score">0.248</td></tr>
-        <tr><td class="rank">6</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:89.8%"></i></div></td><td class="score">0.246</td></tr>
-        <tr><td class="rank">7</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="effcell"><span class="efftxt" title="agent default — effort ladder not published">—</span></td><td class="barcell"><div class="bar"><i style="width:77.4%"></i></div></td><td class="score">0.212</td></tr>
-        <tr><td class="rank">8</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · medium</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:74.8%"></i></div></td><td class="score">0.205</td></tr>
-        <tr><td class="rank">9</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:71.0%"></i></div></td><td class="score">0.194</td></tr>
-        <tr><td class="rank">10</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:69.5%"></i></div></td><td class="score">0.190</td></tr>
-        <tr><td class="rank">11</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.145</td></tr>
-        <tr><td class="rank">12</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:38.2%"></i></div></td><td class="score">0.105</td></tr>
+        <tr class="r1" data-score="0.274" data-tokens="757"><td class="rank">1</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100%"></i></div></td><td class="score">0.274</td><td class="toks">757K</td></tr>
+        <tr class="r2" data-score="0.269" data-tokens="304"><td class="rank">2</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><span class="model">GLM-5.2</span></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="effcell"><span class="gdots" title="Max · level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span><span class="efftxt" style="color:#6d28d9">Max</span></td><td class="barcell"><div class="bar"><i style="width:98.2%"></i></div></td><td class="score">0.269</td><td class="toks">304K</td></tr>
+        <tr class="r3" data-score="0.263" data-tokens="602"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:96.1%"></i></div></td><td class="score">0.263</td><td class="toks">602K</td></tr>
+        <tr data-score="0.262" data-tokens="279"><td class="rank">4</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:95.6%"></i></div></td><td class="score">0.262</td><td class="toks">279K</td></tr>
+        <tr data-score="0.248" data-tokens="252"><td class="rank">5</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:90.6%"></i></div></td><td class="score">0.248</td><td class="toks">252K</td></tr>
+        <tr data-score="0.246" data-tokens="229"><td class="rank">6</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:89.8%"></i></div></td><td class="score">0.246</td><td class="toks">229K</td></tr>
+        <tr data-score="0.212" data-tokens="120"><td class="rank">7</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="effcell"><span class="efftxt" title="agent default — effort ladder not published">—</span></td><td class="barcell"><div class="bar"><i style="width:77.4%"></i></div></td><td class="score">0.212</td><td class="toks">120K</td></tr>
+        <tr data-score="0.205" data-tokens="272"><td class="rank">8</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · medium</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:74.8%"></i></div></td><td class="score">0.205</td><td class="toks">272K</td></tr>
+        <tr data-score="0.194" data-tokens="646"><td class="rank">9</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:71.0%"></i></div></td><td class="score">0.194</td><td class="toks">646K</td></tr>
+        <tr data-score="0.190" data-tokens=""><td class="rank">10</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:69.5%"></i></div></td><td class="score">0.190</td><td class="toks" title="no local logs">—</td></tr>
+        <tr data-score="0.145" data-tokens=""><td class="rank">11</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.145</td><td class="toks" title="no local logs">—</td></tr>
+        <tr data-score="0.105" data-tokens="224"><td class="rank">12</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:38.2%"></i></div></td><td class="score">0.105</td><td class="toks">224K</td></tr>
       </tbody>
     </table>
     <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release</strong> (Codex-CLI 0.134 / Claude Code 2.1.152), with a free choice of stack. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
@@ -409,5 +422,38 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var tbody = document.querySelector('.lb tbody');
+  var sel = document.getElementById('lbsort');
+  if (!tbody || !sel) return;
+  var rows = [].slice.call(tbody.querySelectorAll('tr'));
+  function rerank(metric) {
+    var sorted = rows.slice();
+    if (metric === 'tokens') {
+      // leanest first; rows without token data sink to the bottom
+      sorted.sort(function (a, b) {
+        var ta = parseFloat(a.dataset.tokens), tb = parseFloat(b.dataset.tokens);
+        var na = isNaN(ta), nb = isNaN(tb);
+        if (na && nb) return 0;
+        if (na) return 1;
+        if (nb) return -1;
+        return ta - tb;
+      });
+    } else {
+      sorted.sort(function (a, b) {
+        return parseFloat(b.dataset.score) - parseFloat(a.dataset.score);
+      });
+    }
+    sorted.forEach(function (r, i) {
+      r.querySelector('.rank').textContent = i + 1;
+      r.classList.remove('r1', 'r2', 'r3');
+      if (i < 3) r.classList.add('r' + (i + 1));
+      tbody.appendChild(r);
+    });
+  }
+  sel.addEventListener('change', function () { rerank(this.value); });
+})();
+</script>
 </body>
 </html>
