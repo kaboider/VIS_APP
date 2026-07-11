@@ -4,7 +4,88 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>VISTA Leaderboard — Visual Spec-to-Web-App Coding Agents</title>
-<meta name="description" content="VISTA — a benchmark leaderboard ranking LLM coding agents on end-to-end web-app generation from visual specs." />
+<meta name="description" content="Benchmark leaderboard ranking LLM coding agents — GPT-5.6, Claude Opus 4.8, Codex, GLM-5.2, Gemini — on building real, runnable web apps from Figma visual specs. Scored on DOM-grounded localization and behavior." />
+<meta name="keywords" content="VISTA benchmark, LLM coding agents, coding agent leaderboard, visual spec to code, web app generation benchmark, Figma to code, design to code, GPT-5.6, Claude Code, OpenAI Codex, GLM-5.2, Gemini coding agent, AI front-end developer, agent evaluation" />
+<meta name="author" content="JunJia Guo, Yuhang Yao, Jiawei Zhou, Jingdi Chen" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://vista-benchmark.org/" />
+<meta name="theme-color" content="#c2410c" />
+
+<!-- Open Graph / Facebook / LinkedIn / WeChat -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VISTA Benchmark" />
+<meta property="og:url" content="https://vista-benchmark.org/" />
+<meta property="og:title" content="VISTA Leaderboard — Can Coding Agents Build Web Apps from a Design?" />
+<meta property="og:description" content="A benchmark ranking LLM coding agents (GPT-5.6, Claude, Codex, GLM, Gemini) on building real web apps end-to-end from Figma visual specs." />
+<meta property="og:image" content="https://vista-benchmark.org/figs/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="VISTA Leaderboard ranking LLM coding agents on visual-spec-to-web-app generation" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VISTA Leaderboard — Coding Agents Build Web Apps from a Design" />
+<meta name="twitter:description" content="Benchmark ranking LLM coding agents (GPT-5.6, Claude, Codex, GLM, Gemini) on visual-spec-to-web-app generation." />
+<meta name="twitter:image" content="https://vista-benchmark.org/figs/og-card.png" />
+
+<!-- Structured data: Dataset (Google Dataset Search) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "VISTA: An End-to-End Benchmark for Visual Spec-to-Web-App Coding Agents",
+  "alternateName": "VISTA Benchmark",
+  "description": "VISTA benchmarks LLM coding agents on building real, runnable multi-page web apps from a visual spec (a rendered Figma mockup plus its pruned layout tree). Each app is brought up in Docker and every human-annotated UI anchor is matched to a rendered DOM element, scoring localization (position vs. the mockup) and behavior (interaction correctness). Covers 10 app categories, 128 annotated pages, and 458 visual anchor points.",
+  "url": "https://vista-benchmark.org/",
+  "keywords": ["LLM coding agents","visual spec to code","web app generation","Figma to code","design to code","agent evaluation","benchmark leaderboard"],
+  "creator": {
+    "@type": "Organization",
+    "name": "VISTA Benchmark",
+    "member": ["JunJia Guo","Yuhang Yao","Jiawei Zhou","Jingdi Chen"]
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "sameAs": [
+    "https://huggingface.co/datasets/JunJiaGuo/VIS-APP-Bench",
+    "https://github.com/kaboider/VISTA_Bench",
+    "https://arxiv.org/abs/2605.26144"
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "application/json",
+    "contentUrl": "https://huggingface.co/datasets/JunJiaGuo/VIS-APP-Bench"
+  },
+  "citation": "Guo, JunJia and Yao, Yuhang and Zhou, Jiawei and Chen, Jingdi. VISTA: An End-to-End Benchmark for Visual Spec-to-Web-App Coding Agents. arXiv:2605.26144, 2026."
+}
+</script>
+<!-- Structured data: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "VISTA Leaderboard",
+  "url": "https://vista-benchmark.org/",
+  "description": "Leaderboard ranking LLM coding agents on visual-spec-to-web-app generation."
+}
+</script>
+<!-- Structured data: ScholarlyArticle -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "VISTA: An End-to-End Benchmark for Visual Spec-to-Web-App Coding Agents",
+  "author": [
+    {"@type":"Person","name":"JunJia Guo"},
+    {"@type":"Person","name":"Yuhang Yao"},
+    {"@type":"Person","name":"Jiawei Zhou"},
+    {"@type":"Person","name":"Jingdi Chen"}
+  ],
+  "datePublished": "2026",
+  "identifier": "arXiv:2605.26144",
+  "url": "https://arxiv.org/abs/2605.26144",
+  "publisher": {"@type":"Organization","name":"arXiv"}
+}
+</script>
 <style>
   :root{
     --ink:#15171c; --muted:#5b6270; --line:#e6e3da; --paper:#f7f5ef;
@@ -142,23 +223,25 @@
       <tbody>
         
         
-        <tr class="r1" data-score="0.274" data-tokens="757" data-cost="12.04"><td class="rank">1</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100%"></i></div></td><td class="score">0.274</td><td class="toks">757K</td><td class="cost" data-cost="12.04">$12.04</td></tr>
-        <tr class="r2" data-score="0.270" data-tokens="98" data-cost="0.68"><td class="rank">2</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-terra</span></td><td><span class="fam">codex 0.144</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:98.5%"></i></div></td><td class="score">0.270</td><td class="toks">98K</td><td class="cost" data-cost="0.68">$0.68</td></tr>
-        <tr class="r3" data-score="0.269" data-tokens="304" data-cost="3.65"><td class="rank">3</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><span class="model">GLM-5.2</span></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="effcell"><span class="gdots" title="Max · level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span><span class="efftxt" style="color:#6d28d9">Max</span></td><td class="barcell"><div class="bar"><i style="width:98.2%"></i></div></td><td class="score">0.269</td><td class="toks">304K</td><td class="cost" data-cost="3.65">$3.65</td></tr>
-        <tr data-score="0.263" data-tokens="602" data-cost="10.45"><td class="rank">4</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:96.1%"></i></div></td><td class="score">0.263</td><td class="toks">602K</td><td class="cost" data-cost="10.45">$10.45</td></tr>
-        <tr data-score="0.262" data-tokens="279" data-cost="3.90"><td class="rank">5</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:95.6%"></i></div></td><td class="score">0.262</td><td class="toks">279K</td><td class="cost" data-cost="3.90">$3.90</td></tr>
-        <tr data-score="0.248" data-tokens="252" data-cost="3.85"><td class="rank">6</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:90.6%"></i></div></td><td class="score">0.248</td><td class="toks">252K</td><td class="cost" data-cost="3.85">$3.85</td></tr>
-        <tr data-score="0.246" data-tokens="229" data-cost="6.54"><td class="rank">7</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:89.8%"></i></div></td><td class="score">0.246</td><td class="toks">229K</td><td class="cost" data-cost="6.54">$6.54</td></tr>
-        <tr data-score="0.212" data-tokens="120"><td class="rank">8</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="effcell"><span class="efftxt" title="agent default — effort ladder not published">—</span></td><td class="barcell"><div class="bar"><i style="width:77.4%"></i></div></td><td class="score">0.212</td><td class="toks">120K</td><td class="cost" title="cursor-agent doesn't report cost; only a $3/$15 fast-variant rate is published (no cached-token rate, variant unconfirmed)">—</td></tr>
-        <tr data-score="0.205" data-tokens="272" data-cost="3.33"><td class="rank">9</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · medium</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:74.8%"></i></div></td><td class="score">0.205</td><td class="toks">272K</td><td class="cost" data-cost="3.33">$3.33</td></tr>
-        <tr data-score="0.204" data-tokens=""><td class="rank">10</td><td><img class="lblogo" src="figs/github-copilot.png" alt="GitHub Copilot"><span class="model">MAI-Code-1-Flash</span></td><td><span class="fam">copilot 1.0.68</span></td><td class="effcell"><span class="efftxt" title="copilot default effort (not explicitly set); MAI-Code-1-Flash exposes low/medium/high">—</span></td><td class="barcell"><div class="bar"><i style="width:74.6%"></i></div></td><td class="score">0.204</td><td class="toks" title="real input+output tokens (median over 10 tasks, from OpenTelemetry gen_ai.usage.*) — but Copilot re-sends the full context on each of ~55 LLM calls/task with no cache discount, so not comparable to the other rows' non-cached input+output; excluded from the token sort">7.4M<sup>†</sup></td><td class="cost" title="GitHub Copilot bills in AI-credits (AIU), not USD; no USD cost or cache-token breakdown is exposed">—</td></tr>
-        <tr data-score="0.194" data-tokens="646" data-cost="1.83"><td class="rank">11</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:71.0%"></i></div></td><td class="score">0.194</td><td class="toks">646K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
-        <tr data-score="0.190" data-tokens=""><td class="rank">12</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:69.5%"></i></div></td><td class="score">0.190</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
-        <tr data-score="0.145" data-tokens=""><td class="rank">13</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.145</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
-        <tr data-score="0.105" data-tokens="224" data-cost="1.03"><td class="rank">14</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:38.2%"></i></div></td><td class="score">0.105</td><td class="toks">224K</td><td class="cost" data-cost="1.03">$1.03</td></tr>
+        
+        <tr class="r1" data-score="0.309" data-tokens="357" data-cost="4.66"><td class="rank">1</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-sol</span></td><td><span class="fam">codex 0.144 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100.0%"></i></div></td><td class="score">0.309</td><td class="toks">357K</td><td class="cost" data-cost="4.66">$4.66</td></tr>
+        <tr class="r2" data-score="0.274" data-tokens="757" data-cost="12.04"><td class="rank">2</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:88.7%"></i></div></td><td class="score">0.274</td><td class="toks">757K</td><td class="cost" data-cost="12.04">$12.04</td></tr>
+        <tr class="r3" data-score="0.270" data-tokens="98" data-cost="0.68"><td class="rank">3</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-terra</span></td><td><span class="fam">codex 0.144</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:87.4%"></i></div></td><td class="score">0.270</td><td class="toks">98K</td><td class="cost" data-cost="0.68">$0.68</td></tr>
+        <tr data-score="0.269" data-tokens="304" data-cost="3.65"><td class="rank">4</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><span class="model">GLM-5.2</span></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="effcell"><span class="gdots" title="Max · level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span><span class="efftxt" style="color:#6d28d9">Max</span></td><td class="barcell"><div class="bar"><i style="width:87.1%"></i></div></td><td class="score">0.269</td><td class="toks">304K</td><td class="cost" data-cost="3.65">$3.65</td></tr>
+        <tr data-score="0.263" data-tokens="602" data-cost="10.45"><td class="rank">5</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:85.1%"></i></div></td><td class="score">0.263</td><td class="toks">602K</td><td class="cost" data-cost="10.45">$10.45</td></tr>
+        <tr data-score="0.262" data-tokens="279" data-cost="3.90"><td class="rank">6</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:84.8%"></i></div></td><td class="score">0.262</td><td class="toks">279K</td><td class="cost" data-cost="3.90">$3.90</td></tr>
+        <tr data-score="0.248" data-tokens="252" data-cost="3.85"><td class="rank">7</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:80.3%"></i></div></td><td class="score">0.248</td><td class="toks">252K</td><td class="cost" data-cost="3.85">$3.85</td></tr>
+        <tr data-score="0.246" data-tokens="229" data-cost="6.54"><td class="rank">8</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:79.6%"></i></div></td><td class="score">0.246</td><td class="toks">229K</td><td class="cost" data-cost="6.54">$6.54</td></tr>
+        <tr data-score="0.212" data-tokens="120"><td class="rank">9</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="effcell"><span class="efftxt" title="agent default — effort ladder not published">—</span></td><td class="barcell"><div class="bar"><i style="width:68.6%"></i></div></td><td class="score">0.212</td><td class="toks">120K</td><td class="cost" title="cursor-agent doesn't report cost; only a $3/$15 fast-variant rate is published (no cached-token rate, variant unconfirmed)">—</td></tr>
+        <tr data-score="0.205" data-tokens="272" data-cost="3.33"><td class="rank">10</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · medium</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:66.3%"></i></div></td><td class="score">0.205</td><td class="toks">272K</td><td class="cost" data-cost="3.33">$3.33</td></tr>
+        <tr data-score="0.204" data-tokens=""><td class="rank">11</td><td><img class="lblogo" src="figs/github-copilot.png" alt="GitHub Copilot"><span class="model">MAI-Code-1-Flash</span></td><td><span class="fam">copilot 1.0.68</span></td><td class="effcell"><span class="efftxt" title="copilot default effort (not explicitly set); MAI-Code-1-Flash exposes low/medium/high">—</span></td><td class="barcell"><div class="bar"><i style="width:66.0%"></i></div></td><td class="score">0.204</td><td class="toks" title="real input+output tokens (median over 10 tasks, from OpenTelemetry gen_ai.usage.*) — but Copilot re-sends the full context on each of ~55 LLM calls/task with no cache discount, so not comparable to the other rows' non-cached input+output; excluded from the token sort">7.4M<sup>†</sup></td><td class="cost" title="GitHub Copilot bills in AI-credits (AIU), not USD; no USD cost or cache-token breakdown is exposed">—</td></tr>
+        <tr data-score="0.194" data-tokens="646" data-cost="1.83"><td class="rank">12</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:62.8%"></i></div></td><td class="score">0.194</td><td class="toks">646K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
+        <tr data-score="0.190" data-tokens=""><td class="rank">13</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:61.5%"></i></div></td><td class="score">0.190</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
+        <tr data-score="0.145" data-tokens=""><td class="rank">14</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:46.9%"></i></div></td><td class="score">0.145</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
+        <tr data-score="0.105" data-tokens="224" data-cost="1.03"><td class="rank">15</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:34.0%"></i></div></td><td class="score">0.105</td><td class="toks">224K</td><td class="cost" data-cost="1.03">$1.03</td></tr>
       </tbody>
     </table>
-    <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release</strong> (Codex-CLI 0.134 / Claude Code 2.1.152), with a free choice of stack. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
+    <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release</strong> (Codex-CLI 0.134–0.144 / Claude Code 2.1.152), with a free choice of stack. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
 
     <div class="h2sub" style="font-size:18px;margin-top:30px;">Reasoning effort used</div>
     <p class="lead" style="font-size:15px;">Each harness exposes a different reasoning-effort ladder, so levels aren't directly comparable. The highlighted dot marks the level each model ran at; the row length shows the granularity available. Notably, <strong>GLM-5.2 ran at its ceiling (max)</strong>, while the Claude and Codex models still had headroom above the level used.</p>
@@ -171,7 +254,7 @@
       <div class="eff">
         <span class="dots" title="High — level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span>
         <span class="efflab"><b>High</b> · 3 / 4</span>
-        <span class="effmodels"><img src="figs/ChatGPT-Logo.png" alt="OpenAI">Codex <span class="muted">(4 levels)</span> — GPT-5.5 <span class="muted">(high run, #4)</span></span>
+        <span class="effmodels"><img src="figs/ChatGPT-Logo.png" alt="OpenAI">Codex <span class="muted">(4 levels)</span> — GPT-5.6-sol, GPT-5.6-terra, GPT-5.5 <span class="muted">(high runs)</span></span>
       </div>
       <div class="eff">
         <span class="dots" title="Medium — level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span>
