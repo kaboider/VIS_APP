@@ -225,7 +225,7 @@
         
         
         
-        <tr class="r1" data-score="0.367" data-tokens="161"><td class="rank">1</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Grok 4.5</span></td><td><span class="fam">cursor-agent 2026.07.01</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:100.0%"></i></div></td><td class="score">0.367</td><td class="toks">161K</td><td class="cost" title="cursor-agent doesn't report cost, and there is no published per-token rate for Grok 4.5 via Cursor to compute it without guessing">—</td></tr>
+        <tr class="r1" data-score="0.367" data-tokens="161" data-cost="1.83"><td class="rank">1</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Grok 4.5</span></td><td><span class="fam">cursor-agent 2026.07.01</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:100.0%"></i></div></td><td class="score">0.367</td><td class="toks">161K</td><td class="cost" data-cost="1.83" title="Cursor's actual billed total for Grok 4.5 across all 3 rounds ($54.75) ÷ 30 task-builds = $1.83/task. Cursor exposes no per-token or per-run cost, so this is the dashboard aggregate, not a per-token computation.">$1.83</td></tr>
         <tr class="r2" data-score="0.309" data-tokens="357" data-cost="4.66"><td class="rank">2</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-sol</span></td><td><span class="fam">codex 0.144 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:84.2%"></i></div></td><td class="score">0.309</td><td class="toks">357K</td><td class="cost" data-cost="4.66">$4.66</td></tr>
         <tr class="r3" data-score="0.274" data-tokens="757" data-cost="12.04"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:74.7%"></i></div></td><td class="score">0.274</td><td class="toks">757K</td><td class="cost" data-cost="12.04">$12.04</td></tr>
         <tr data-score="0.270" data-tokens="98" data-cost="0.68"><td class="rank">4</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-terra</span></td><td><span class="fam">codex 0.144</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:73.6%"></i></div></td><td class="score">0.270</td><td class="toks">98K</td><td class="cost" data-cost="0.68">$0.68</td></tr>
@@ -291,39 +291,48 @@
       <figure style="flex:1 1 380px;min-width:300px;">
         <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">Billable tokens per task</div>
         <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 8px;">
-<svg viewBox="0 0 466 272" width="100%" font-family="var(--mono)">
-<line x1="248" y1="12" x2="248" y2="260" stroke="#efece4" stroke-width="1"/>
-<line x1="398" y1="12" x2="398" y2="260" stroke="#efece4" stroke-width="1"/>
-<text x="92" y="28" text-anchor="end" font-size="11" fill="#15171c">fable-5</text>
-<rect x="98" y="18" width="300.0" height="14" rx="3" fill="#c2410c"/>
-<text x="404.0" y="28" font-size="10.5" font-weight="700" fill="#15171c">757K</text>
-<text x="92" y="53" text-anchor="end" font-size="11" fill="#15171c">GLM-5.2</text>
-<rect x="98" y="43" width="120.5" height="14" rx="3" fill="#6d28d9"/>
-<text x="224.5" y="53" font-size="10.5" font-weight="700" fill="#15171c">304K</text>
-<text x="92" y="78" text-anchor="end" font-size="11" fill="#15171c">Opus 4.8</text>
-<rect x="98" y="68" width="238.6" height="14" rx="3" fill="#c2410c"/>
-<text x="342.6" y="78" font-size="10.5" font-weight="700" fill="#15171c">602K</text>
-<text x="92" y="103" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 high</text>
-<rect x="98" y="93" width="110.6" height="14" rx="3" fill="#2f6f9f"/>
-<text x="214.6" y="103" font-size="10.5" font-weight="700" fill="#15171c">279K</text>
-<text x="92" y="128" text-anchor="end" font-size="11" fill="#15171c">Sonnet 4.6</text>
-<rect x="98" y="118" width="99.9" height="14" rx="3" fill="#c2410c"/>
-<text x="203.9" y="128" font-size="10.5" font-weight="700" fill="#15171c">252K</text>
-<text x="92" y="153" text-anchor="end" font-size="11" fill="#15171c">Opus 4.7</text>
-<rect x="98" y="143" width="90.8" height="14" rx="3" fill="#c2410c"/>
-<text x="194.8" y="153" font-size="10.5" font-weight="700" fill="#15171c">229K</text>
-<text x="92" y="178" text-anchor="end" font-size="11" fill="#15171c">Composer 2.5</text>
-<rect x="98" y="168" width="47.6" height="14" rx="3" fill="#6b7280"/>
-<text x="151.6" y="178" font-size="10.5" font-weight="700" fill="#15171c">120K</text>
-<text x="92" y="203" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 med</text>
-<rect x="98" y="193" width="107.8" height="14" rx="3" fill="#2f6f9f"/>
-<text x="211.8" y="203" font-size="10.5" font-weight="700" fill="#15171c">272K</text>
-<text x="92" y="228" text-anchor="end" font-size="11" fill="#15171c">GPT-5.4-mini</text>
-<rect x="98" y="218" width="256.0" height="14" rx="3" fill="#2f6f9f"/>
-<text x="360.0" y="228" font-size="10.5" font-weight="700" fill="#15171c">646K</text>
-<text x="92" y="253" text-anchor="end" font-size="11" fill="#15171c">Haiku 4.5</text>
-<rect x="98" y="243" width="88.8" height="14" rx="3" fill="#c2410c"/>
-<text x="192.8" y="253" font-size="10.5" font-weight="700" fill="#15171c">224K</text>
+<svg viewBox="0 0 466 323" width="100%" font-family="var(--mono)">
+<line x1="248" y1="12" x2="248" y2="313" stroke="#efece4" stroke-width="1"/>
+<line x1="398" y1="12" x2="398" y2="313" stroke="#efece4" stroke-width="1"/>
+<text x="92" y="28" text-anchor="end" font-size="11" fill="#15171c">Grok 4.5</text>
+<rect x="98" y="18" width="63.8" height="13" rx="3" fill="#6b7280"/>
+<text x="167.8" y="28" font-size="10.5" font-weight="700" fill="#15171c">161K</text>
+<text x="92" y="51" text-anchor="end" font-size="11" fill="#15171c">GPT-5.6-sol</text>
+<rect x="98" y="41" width="141.5" height="13" rx="3" fill="#2f6f9f"/>
+<text x="245.5" y="51" font-size="10.5" font-weight="700" fill="#15171c">357K</text>
+<text x="92" y="74" text-anchor="end" font-size="11" fill="#15171c">fable-5</text>
+<rect x="98" y="64" width="300.0" height="13" rx="3" fill="#c2410c"/>
+<text x="404.0" y="74" font-size="10.5" font-weight="700" fill="#15171c">757K</text>
+<text x="92" y="97" text-anchor="end" font-size="11" fill="#15171c">GPT-5.6-terra</text>
+<rect x="98" y="87" width="38.8" height="13" rx="3" fill="#2f6f9f"/>
+<text x="142.8" y="97" font-size="10.5" font-weight="700" fill="#15171c">98K</text>
+<text x="92" y="120" text-anchor="end" font-size="11" fill="#15171c">GLM-5.2</text>
+<rect x="98" y="110" width="120.5" height="13" rx="3" fill="#6d28d9"/>
+<text x="224.5" y="120" font-size="10.5" font-weight="700" fill="#15171c">304K</text>
+<text x="92" y="143" text-anchor="end" font-size="11" fill="#15171c">Opus 4.8</text>
+<rect x="98" y="133" width="238.6" height="13" rx="3" fill="#c2410c"/>
+<text x="342.6" y="143" font-size="10.5" font-weight="700" fill="#15171c">602K</text>
+<text x="92" y="166" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 high</text>
+<rect x="98" y="156" width="110.6" height="13" rx="3" fill="#2f6f9f"/>
+<text x="214.6" y="166" font-size="10.5" font-weight="700" fill="#15171c">279K</text>
+<text x="92" y="189" text-anchor="end" font-size="11" fill="#15171c">Sonnet 4.6</text>
+<rect x="98" y="179" width="99.9" height="13" rx="3" fill="#c2410c"/>
+<text x="203.9" y="189" font-size="10.5" font-weight="700" fill="#15171c">252K</text>
+<text x="92" y="212" text-anchor="end" font-size="11" fill="#15171c">Opus 4.7</text>
+<rect x="98" y="202" width="90.8" height="13" rx="3" fill="#c2410c"/>
+<text x="194.8" y="212" font-size="10.5" font-weight="700" fill="#15171c">229K</text>
+<text x="92" y="235" text-anchor="end" font-size="11" fill="#15171c">Composer 2.5</text>
+<rect x="98" y="225" width="47.6" height="13" rx="3" fill="#6b7280"/>
+<text x="151.6" y="235" font-size="10.5" font-weight="700" fill="#15171c">120K</text>
+<text x="92" y="258" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 med</text>
+<rect x="98" y="248" width="107.8" height="13" rx="3" fill="#2f6f9f"/>
+<text x="211.8" y="258" font-size="10.5" font-weight="700" fill="#15171c">272K</text>
+<text x="92" y="281" text-anchor="end" font-size="11" fill="#15171c">GPT-5.4-mini</text>
+<rect x="98" y="271" width="256.0" height="13" rx="3" fill="#2f6f9f"/>
+<text x="360.0" y="281" font-size="10.5" font-weight="700" fill="#15171c">646K</text>
+<text x="92" y="304" text-anchor="end" font-size="11" fill="#15171c">Haiku 4.5</text>
+<rect x="98" y="294" width="88.8" height="13" rx="3" fill="#c2410c"/>
+<text x="192.8" y="304" font-size="10.5" font-weight="700" fill="#15171c">224K</text>
 </svg>
         </div>
         <figcaption>Median <strong>non-cached input + output</strong> tokens per task — the cost-relevant tokens, excluding cheap repeated cache-reads (which otherwise just track a harness's turn count).</figcaption>
@@ -331,39 +340,48 @@
       <figure style="flex:1 1 380px;min-width:300px;">
         <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">Time per task</div>
         <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 8px;">
-<svg viewBox="0 0 466 272" width="100%" font-family="var(--mono)">
-<line x1="248" y1="12" x2="248" y2="260" stroke="#efece4" stroke-width="1"/>
-<line x1="398" y1="12" x2="398" y2="260" stroke="#efece4" stroke-width="1"/>
-<text x="92" y="28" text-anchor="end" font-size="11" fill="#15171c">fable-5</text>
-<rect x="98" y="18" width="300.0" height="14" rx="3" fill="#c2410c"/>
-<text x="404.0" y="28" font-size="10.5" font-weight="700" fill="#15171c">43m</text>
-<text x="92" y="53" text-anchor="end" font-size="11" fill="#15171c">GLM-5.2</text>
-<rect x="98" y="43" width="203.7" height="14" rx="3" fill="#6d28d9"/>
-<text x="307.7" y="53" font-size="10.5" font-weight="700" fill="#15171c">29m</text>
-<text x="92" y="78" text-anchor="end" font-size="11" fill="#15171c">Opus 4.8</text>
-<rect x="98" y="68" width="191.2" height="14" rx="3" fill="#c2410c"/>
-<text x="295.2" y="78" font-size="10.5" font-weight="700" fill="#15171c">28m</text>
-<text x="92" y="103" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 high</text>
-<rect x="98" y="93" width="102.5" height="14" rx="3" fill="#2f6f9f"/>
-<text x="206.5" y="103" font-size="10.5" font-weight="700" fill="#15171c">15m</text>
-<text x="92" y="128" text-anchor="end" font-size="11" fill="#15171c">Sonnet 4.6</text>
-<rect x="98" y="118" width="143.4" height="14" rx="3" fill="#c2410c"/>
-<text x="247.4" y="128" font-size="10.5" font-weight="700" fill="#15171c">21m</text>
-<text x="92" y="153" text-anchor="end" font-size="11" fill="#15171c">Opus 4.7</text>
-<rect x="98" y="143" width="112.9" height="14" rx="3" fill="#c2410c"/>
-<text x="216.9" y="153" font-size="10.5" font-weight="700" fill="#15171c">16m</text>
-<text x="92" y="178" text-anchor="end" font-size="11" fill="#15171c">Composer 2.5</text>
-<rect x="98" y="168" width="70.7" height="14" rx="3" fill="#6b7280"/>
-<text x="174.7" y="178" font-size="10.5" font-weight="700" fill="#15171c">10m</text>
-<text x="92" y="203" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 med</text>
-<rect x="98" y="193" width="81.1" height="14" rx="3" fill="#2f6f9f"/>
-<text x="185.1" y="203" font-size="10.5" font-weight="700" fill="#15171c">12m</text>
-<text x="92" y="228" text-anchor="end" font-size="11" fill="#15171c">GPT-5.4-mini</text>
-<rect x="98" y="218" width="159.4" height="14" rx="3" fill="#2f6f9f"/>
-<text x="263.4" y="228" font-size="10.5" font-weight="700" fill="#15171c">23m</text>
-<text x="92" y="253" text-anchor="end" font-size="11" fill="#15171c">Haiku 4.5</text>
-<rect x="98" y="243" width="80.4" height="14" rx="3" fill="#c2410c"/>
-<text x="184.4" y="253" font-size="10.5" font-weight="700" fill="#15171c">12m</text>
+<svg viewBox="0 0 466 323" width="100%" font-family="var(--mono)">
+<line x1="248" y1="12" x2="248" y2="313" stroke="#efece4" stroke-width="1"/>
+<line x1="398" y1="12" x2="398" y2="313" stroke="#efece4" stroke-width="1"/>
+<text x="92" y="28" text-anchor="end" font-size="11" fill="#15171c">Grok 4.5</text>
+<rect x="98" y="18" width="62.8" height="13" rx="3" fill="#6b7280"/>
+<text x="166.8" y="28" font-size="10.5" font-weight="700" fill="#15171c">9m</text>
+<text x="92" y="51" text-anchor="end" font-size="11" fill="#15171c">GPT-5.6-sol</text>
+<rect x="98" y="41" width="125.6" height="13" rx="3" fill="#2f6f9f"/>
+<text x="229.6" y="51" font-size="10.5" font-weight="700" fill="#15171c">18m</text>
+<text x="92" y="74" text-anchor="end" font-size="11" fill="#15171c">fable-5</text>
+<rect x="98" y="64" width="300.0" height="13" rx="3" fill="#c2410c"/>
+<text x="404.0" y="74" font-size="10.5" font-weight="700" fill="#15171c">43m</text>
+<text x="92" y="97" text-anchor="end" font-size="11" fill="#15171c">GPT-5.6-terra</text>
+<rect x="98" y="87" width="48.8" height="13" rx="3" fill="#2f6f9f"/>
+<text x="152.8" y="97" font-size="10.5" font-weight="700" fill="#15171c">7m</text>
+<text x="92" y="120" text-anchor="end" font-size="11" fill="#15171c">GLM-5.2</text>
+<rect x="98" y="110" width="202.3" height="13" rx="3" fill="#6d28d9"/>
+<text x="306.3" y="120" font-size="10.5" font-weight="700" fill="#15171c">29m</text>
+<text x="92" y="143" text-anchor="end" font-size="11" fill="#15171c">Opus 4.8</text>
+<rect x="98" y="133" width="195.3" height="13" rx="3" fill="#c2410c"/>
+<text x="299.3" y="143" font-size="10.5" font-weight="700" fill="#15171c">28m</text>
+<text x="92" y="166" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 high</text>
+<rect x="98" y="156" width="104.7" height="13" rx="3" fill="#2f6f9f"/>
+<text x="208.7" y="166" font-size="10.5" font-weight="700" fill="#15171c">15m</text>
+<text x="92" y="189" text-anchor="end" font-size="11" fill="#15171c">Sonnet 4.6</text>
+<rect x="98" y="179" width="146.5" height="13" rx="3" fill="#c2410c"/>
+<text x="250.5" y="189" font-size="10.5" font-weight="700" fill="#15171c">21m</text>
+<text x="92" y="212" text-anchor="end" font-size="11" fill="#15171c">Opus 4.7</text>
+<rect x="98" y="202" width="111.6" height="13" rx="3" fill="#c2410c"/>
+<text x="215.6" y="212" font-size="10.5" font-weight="700" fill="#15171c">16m</text>
+<text x="92" y="235" text-anchor="end" font-size="11" fill="#15171c">Composer 2.5</text>
+<rect x="98" y="225" width="69.8" height="13" rx="3" fill="#6b7280"/>
+<text x="173.8" y="235" font-size="10.5" font-weight="700" fill="#15171c">10m</text>
+<text x="92" y="258" text-anchor="end" font-size="11" fill="#15171c">GPT-5.5 med</text>
+<rect x="98" y="248" width="83.7" height="13" rx="3" fill="#2f6f9f"/>
+<text x="187.7" y="258" font-size="10.5" font-weight="700" fill="#15171c">12m</text>
+<text x="92" y="281" text-anchor="end" font-size="11" fill="#15171c">GPT-5.4-mini</text>
+<rect x="98" y="271" width="160.5" height="13" rx="3" fill="#2f6f9f"/>
+<text x="264.5" y="281" font-size="10.5" font-weight="700" fill="#15171c">23m</text>
+<text x="92" y="304" text-anchor="end" font-size="11" fill="#15171c">Haiku 4.5</text>
+<rect x="98" y="294" width="83.7" height="13" rx="3" fill="#c2410c"/>
+<text x="187.7" y="304" font-size="10.5" font-weight="700" fill="#15171c">12m</text>
 </svg>
         </div>
         <figcaption>Median wall-clock to build each app (agent run only, excludes eval).</figcaption>
@@ -374,9 +392,9 @@
       <span style="color:#2f6f9f;font-weight:700">■</span> Codex ·
       <span style="color:#6b7280;font-weight:700">■</span> Cursor ·
       <span style="color:#6d28d9;font-weight:700">■</span> z.ai GLM.
-      Same 10 C4 tasks per model. Externally-provided entries (GPT-5.4, Gemini 3.5 Flash) have no local logs and are omitted.</p>
+      Same 10 C4 tasks per model. Externally-provided entries (GPT-5.4, Gemini 3.5 Flash) have no local logs, and MAI-Code-1-Flash reports output-only tokens (not comparable), so all three are omitted here.</p>
     <p class="muted note"><strong>How tokens are counted:</strong> per task we take <em>non-cached input + output</em> — Claude/Cursor: <code>input + cache-creation + output</code>; Codex: <code>(input − cached) + output + reasoning</code> — then the median over the 10 tasks. Cached re-reads (<code>cache_read</code>) are excluded: they bill at ~10% and, summed over a multi-turn harness, mostly track turn count rather than usage (counting them made Claude look ~6× heavier). GLM-5.2's totals come from each run's final <code>result</code> event, since z.ai's endpoint leaves per-message usage empty. <strong>†</strong> MAI-Code-1-Flash (GitHub Copilot): Tokens shows <em>real input+output</em> — median <strong>7.4M/task</strong> (input ~7.3M + output ~98K), captured via the Copilot CLI's OpenTelemetry export (<code>gen_ai.usage.input_tokens/output_tokens</code>). It is <em>not</em> comparable to the other rows and is excluded from the token sort: Copilot re-sends the full, growing context on each of ~55 LLM calls per task and its usage accounting exposes no cache-read discount, so the input side is inflated relative to the <em>non-cached</em> input+output figures above. (Copilot's plain JSONL stream reports only per-message output tokens — the input figure is available solely through the OTel export.)</p>
-    <p class="muted note"><strong>How cost is estimated:</strong> real median API cost per task in USD = each run's actual billed tokens (input, cached, output/reasoning — <em>cache included</em>) × the provider's official published per-token pricing, then the median over the 10 tasks. Claude models use the CLI's own <code>total_cost_usd</code> (Anthropic's real bill). Codex/GPT and z.ai GLM-5.2 are computed from captured tokens × official pricing (<a href="https://developers.openai.com/api/docs/pricing">OpenAI</a>, <a href="https://docs.z.ai/guides/overview/pricing">z.ai</a>, <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic</a>): e.g. GPT-5.6-terra $2.50/$0.25/$15 and GLM-5.2 $1.40/$0.26/$4.40 per 1M input/cached/output. Note GLM's real z.ai bill (~$3.65) is far below the Anthropic-priced figure Claude Code would report (~$9.44). Cost is left <em>blank</em> where it can't be determined without guessing: <strong>Composer 2.5</strong> (Cursor publishes only a $3/$15 fast-variant rate, no cached-token rate, and the variant used isn't confirmed), <strong>MAI-Code-1-Flash</strong> (GitHub Copilot bills in AI-credits, not USD, with no cache breakdown), and <strong>GPT-5.4 / Gemini 3.5 Flash</strong> (no local token logs captured).</p>
+    <p class="muted note"><strong>How cost is estimated:</strong> real median API cost per task in USD = each run's actual billed tokens (input, cached, output/reasoning — <em>cache included</em>) × the provider's official published per-token pricing, then the median over the 10 tasks. Claude models use the CLI's own <code>total_cost_usd</code> (Anthropic's real bill). Codex/GPT and z.ai GLM-5.2 are computed from captured tokens × official pricing (<a href="https://developers.openai.com/api/docs/pricing">OpenAI</a>, <a href="https://docs.z.ai/guides/overview/pricing">z.ai</a>, <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic</a>): e.g. GPT-5.6-terra $2.50/$0.25/$15 and GLM-5.2 $1.40/$0.26/$4.40 per 1M input/cached/output. Note GLM's real z.ai bill (~$3.65) is far below the Anthropic-priced figure Claude Code would report (~$9.44). <strong>Grok 4.5</strong> (also run through Cursor, which exposes no per-token or per-run cost) uses Cursor's <em>actual billed total</em> from the dashboard — $54.75 across all 3 rounds ÷ 30 task-builds = $1.83/task — rather than a per-token computation. Cost is left <em>blank</em> where even that isn't available: <strong>Composer 2.5</strong> (no dashboard total captured; Cursor publishes only a $3/$15 fast-variant rate, no cached-token rate, and the variant used isn't confirmed), <strong>MAI-Code-1-Flash</strong> (GitHub Copilot bills in AI-credits, not USD, with no cache breakdown), and <strong>GPT-5.4 / Gemini 3.5 Flash</strong> (no local token logs captured).</p>
   </section>
 
   <!-- ============ HARNESS TREND ============ -->
