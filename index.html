@@ -133,6 +133,7 @@
   .lb .rank{font-family:var(--mono);font-weight:700;color:var(--muted);width:46px;font-size:15px;}
   .lb tr.r1 .rank{color:var(--accent);} .lb tr.r2 .rank,.lb tr.r3 .rank{color:var(--gold);}
   .lb .model{font-weight:700;color:var(--ink);font-size:15.5px;}
+  .lb a.model{text-decoration:none;} .lb a.model:hover{color:var(--accent);text-decoration:underline;}
   .lb .lblogo{width:20px;height:20px;object-fit:contain;vertical-align:-5px;margin-right:9px;}
   .lb .fam{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--muted);
     background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-left:2px;}
@@ -143,6 +144,7 @@
   .lb .cost[title]{color:var(--muted);font-weight:400;cursor:help;}
   .lb th.costh{text-align:right;}
   .lbsort{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:14px;margin-bottom:-6px;font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .crow{transition:transform .38s cubic-bezier(.4,0,.2,1);}
   .lbsort select{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:var(--card);
     border:1px solid var(--line);border-radius:7px;padding:5px 9px;cursor:pointer;}
   .lb .effcell{white-space:nowrap;}
@@ -193,6 +195,7 @@
       <a class="btn" href="https://huggingface.co/datasets/JunJiaGuo/VIS-APP-Bench">🤗 Dataset</a>
       <a class="btn ghost" href="https://github.com/kaboider/VISTA_Bench">💻 Code</a>
       <a class="btn ghost" href="https://arxiv.org/abs/2605.26144">📄 Paper</a>
+      <a class="btn ghost" href="https://github.com/kaboider/VISTA_Bench/tree/main/trajectories">🧭 Trajectories</a>
       <a class="btn ghost" href="#cost">⚡ Cost &amp; speed</a>
       <a class="btn ghost" href="#trend">📈 Harness trend</a>
     </div>
@@ -226,23 +229,23 @@
         
         
         
-        <tr class="r1" data-score="0.367" data-tokens="161" data-cost="1.83"><td class="rank">1</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Grok 4.5</span></td><td><span class="fam">cursor-agent 2026.07.01</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:100.0%"></i></div></td><td class="score">0.367</td><td class="toks">161K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
-        <tr class="r2" data-score="0.309" data-tokens="357" data-cost="4.66"><td class="rank">2</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-sol</span></td><td><span class="fam">codex 0.144 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:84.2%"></i></div></td><td class="score">0.309</td><td class="toks">357K</td><td class="cost" data-cost="4.66">$4.66</td></tr>
-        <tr class="r3" data-score="0.274" data-tokens="757" data-cost="12.04"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">fable-5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:74.7%"></i></div></td><td class="score">0.274</td><td class="toks">757K</td><td class="cost" data-cost="12.04">$12.04</td></tr>
-        <tr data-score="0.270" data-tokens="98" data-cost="0.68"><td class="rank">4</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.6-terra</span></td><td><span class="fam">codex 0.144</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:73.6%"></i></div></td><td class="score">0.270</td><td class="toks">98K</td><td class="cost" data-cost="0.68">$0.68</td></tr>
-        <tr data-score="0.269" data-tokens="304" data-cost="3.65"><td class="rank">5</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><span class="model">GLM-5.2</span></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="effcell"><span class="gdots" title="Max · level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span><span class="efftxt" style="color:#6d28d9">Max</span></td><td class="barcell"><div class="bar"><i style="width:73.3%"></i></div></td><td class="score">0.269</td><td class="toks">304K</td><td class="cost" data-cost="3.65">$3.65</td></tr>
-        <tr data-score="0.263" data-tokens="602" data-cost="10.45"><td class="rank">6</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.8</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:71.7%"></i></div></td><td class="score">0.263</td><td class="toks">602K</td><td class="cost" data-cost="10.45">$10.45</td></tr>
-        <tr data-score="0.262" data-tokens="279" data-cost="3.90"><td class="rank">7</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:71.4%"></i></div></td><td class="score">0.262</td><td class="toks">279K</td><td class="cost" data-cost="3.90">$3.90</td></tr>
-        <tr data-score="0.248" data-tokens="252" data-cost="3.85"><td class="rank">8</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Sonnet 4.6</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:67.6%"></i></div></td><td class="score">0.248</td><td class="toks">252K</td><td class="cost" data-cost="3.85">$3.85</td></tr>
-        <tr data-score="0.246" data-tokens="229" data-cost="6.54"><td class="rank">9</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Opus 4.7</span></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:67.0%"></i></div></td><td class="score">0.246</td><td class="toks">229K</td><td class="cost" data-cost="6.54">$6.54</td></tr>
-        <tr data-score="0.224" data-tokens="" data-cost="5.25"><td class="rank">10</td><td><img class="lblogo" src="figs/meta-logo.png" alt="Meta"><span class="model">Muse-Spark-1.1</span></td><td><span class="fam">claude code 2.1.205 · api.meta.ai</span></td><td class="effcell"><span class="efftxt" title="No effort set. Meta exposes 6 levels (minimal/low/medium/high/xhigh; none unsupported for Muse Spark, so it always reasons), but when reasoning_effort is omitted the depth is model-determined with no named default. Claude Code also sends a thinking budget, not reasoning_effort — so there is no named effort level to record.">—</span></td><td class="barcell"><div class="bar"><i style="width:61.0%"></i></div></td><td class="score">0.224</td><td class="toks" title="real non-cached input + output (median over 10 tasks). ~3.8M/task — far above the other rows because Meta's api.meta.ai barely caches (only ~13% of input is cache_read, vs 90-98% elsewhere), so muse re-processes the full context nearly uncached every turn. Excluded from the token sort as an outlier.">3.8M<sup>‡</sup></td><td class="cost" data-cost="5.25">$5.25</td></tr>
-        <tr data-score="0.212" data-tokens="120"><td class="rank">11</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><span class="model">Composer 2.5</span></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="effcell"><span class="efftxt" title="agent default — effort ladder not published">—</span></td><td class="barcell"><div class="bar"><i style="width:57.8%"></i></div></td><td class="score">0.212</td><td class="toks">120K</td><td class="cost" title="cursor-agent doesn't report cost; only a $3/$15 fast-variant rate is published (no cached-token rate, variant unconfirmed)">—</td></tr>
-        <tr data-score="0.205" data-tokens="272" data-cost="3.33"><td class="rank">12</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.5</span></td><td><span class="fam">codex 0.134 · medium</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:55.9%"></i></div></td><td class="score">0.205</td><td class="toks">272K</td><td class="cost" data-cost="3.33">$3.33</td></tr>
-        <tr data-score="0.204" data-tokens=""><td class="rank">13</td><td><img class="lblogo" src="figs/github-copilot.png" alt="GitHub Copilot"><span class="model">MAI-Code-1-Flash</span></td><td><span class="fam">copilot 1.0.68</span></td><td class="effcell"><span class="efftxt" title="copilot default effort (not explicitly set); MAI-Code-1-Flash exposes low/medium/high">—</span></td><td class="barcell"><div class="bar"><i style="width:55.6%"></i></div></td><td class="score">0.204</td><td class="toks" title="real input+output tokens (median over 10 tasks, from OpenTelemetry gen_ai.usage.*) — but Copilot re-sends the full context on each of ~55 LLM calls/task with no cache discount, so not comparable to the other rows' non-cached input+output; excluded from the token sort">7.4M<sup>†</sup></td><td class="cost" title="GitHub Copilot bills in AI-credits (AIU), not USD; no USD cost or cache-token breakdown is exposed">—</td></tr>
-        <tr data-score="0.194" data-tokens="646" data-cost="1.83"><td class="rank">14</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4-mini</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.194</td><td class="toks">646K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
-        <tr data-score="0.190" data-tokens=""><td class="rank">15</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><span class="model">GPT-5.4</span></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:51.8%"></i></div></td><td class="score">0.190</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
-        <tr data-score="0.145" data-tokens=""><td class="rank">16</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><span class="model">Gemini 3.5 Flash</span></td><td><span class="fam">antigravity</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:39.5%"></i></div></td><td class="score">0.145</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
-        <tr data-score="0.105" data-tokens="224" data-cost="1.03"><td class="rank">17</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><span class="model">Haiku 4.5</span></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:28.6%"></i></div></td><td class="score">0.105</td><td class="toks">224K</td><td class="cost" data-cost="1.03">$1.03</td></tr>
+        <tr class="r1" data-score="0.367" data-tokens="161" data-cost="1.83"><td class="rank">1</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><a class="model" href="https://x.ai/" target="_blank" rel="noopener">Grok 4.5</a></td><td><span class="fam">cursor-agent 2026.07.01</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:100.0%"></i></div></td><td class="score">0.367</td><td class="toks">161K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
+        <tr class="r2" data-score="0.309" data-tokens="357" data-cost="4.66"><td class="rank">2</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.6-sol</a></td><td><span class="fam">codex 0.144 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:84.2%"></i></div></td><td class="score">0.309</td><td class="toks">357K</td><td class="cost" data-cost="4.66">$4.66</td></tr>
+        <tr class="r3" data-score="0.274" data-tokens="757" data-cost="12.04"><td class="rank">3</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><a class="model" href="https://www.anthropic.com/claude" target="_blank" rel="noopener">fable-5</a></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:74.7%"></i></div></td><td class="score">0.274</td><td class="toks">757K</td><td class="cost" data-cost="12.04">$12.04</td></tr>
+        <tr data-score="0.270" data-tokens="98" data-cost="0.68"><td class="rank">4</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.6-terra</a></td><td><span class="fam">codex 0.144</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:73.6%"></i></div></td><td class="score">0.270</td><td class="toks">98K</td><td class="cost" data-cost="0.68">$0.68</td></tr>
+        <tr data-score="0.269" data-tokens="304" data-cost="3.65"><td class="rank">5</td><td><img class="lblogo" src="figs/glm-logo.svg" alt="Zhipu GLM"><a class="model" href="https://z.ai/" target="_blank" rel="noopener">GLM-5.2</a></td><td><span class="fam">claude code 2.1.152 · z.ai</span></td><td class="effcell"><span class="gdots" title="Max · level 2 of 2 (ceiling)"><i class="on"></i><i class="maxed"></i></span><span class="efftxt" style="color:#6d28d9">Max</span></td><td class="barcell"><div class="bar"><i style="width:73.3%"></i></div></td><td class="score">0.269</td><td class="toks">304K</td><td class="cost" data-cost="3.65">$3.65</td></tr>
+        <tr data-score="0.263" data-tokens="602" data-cost="10.45"><td class="rank">6</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><a class="model" href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Opus 4.8</a></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:71.7%"></i></div></td><td class="score">0.263</td><td class="toks">602K</td><td class="cost" data-cost="10.45">$10.45</td></tr>
+        <tr data-score="0.262" data-tokens="279" data-cost="3.90"><td class="rank">7</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.5</a></td><td><span class="fam">codex 0.134 · high</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 4"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:71.4%"></i></div></td><td class="score">0.262</td><td class="toks">279K</td><td class="cost" data-cost="3.90">$3.90</td></tr>
+        <tr data-score="0.248" data-tokens="252" data-cost="3.85"><td class="rank">8</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><a class="model" href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Sonnet 4.6</a></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:67.6%"></i></div></td><td class="score">0.248</td><td class="toks">252K</td><td class="cost" data-cost="3.85">$3.85</td></tr>
+        <tr data-score="0.246" data-tokens="229" data-cost="6.54"><td class="rank">9</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><a class="model" href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Opus 4.7</a></td><td><span class="fam">claude code 2.1.126</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:67.0%"></i></div></td><td class="score">0.246</td><td class="toks">229K</td><td class="cost" data-cost="6.54">$6.54</td></tr>
+        <tr data-score="0.224" data-tokens="" data-cost="5.25"><td class="rank">10</td><td><img class="lblogo" src="figs/meta-logo.png" alt="Meta"><a class="model" href="https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/" target="_blank" rel="noopener">Muse-Spark-1.1</a></td><td><span class="fam">claude code 2.1.205 · api.meta.ai</span></td><td class="effcell"><span class="efftxt" title="No effort set. Meta exposes 6 levels (minimal/low/medium/high/xhigh; none unsupported for Muse Spark, so it always reasons), but when reasoning_effort is omitted the depth is model-determined with no named default. Claude Code also sends a thinking budget, not reasoning_effort — so there is no named effort level to record.">—</span></td><td class="barcell"><div class="bar"><i style="width:61.0%"></i></div></td><td class="score">0.224</td><td class="toks" title="real non-cached input + output (median over 10 tasks). ~3.8M/task — far above the other rows because Meta's api.meta.ai barely caches (only ~13% of input is cache_read, vs 90-98% elsewhere), so muse re-processes the full context nearly uncached every turn. Excluded from the token sort as an outlier.">3.8M<sup>‡</sup></td><td class="cost" data-cost="5.25">$5.25</td></tr>
+        <tr data-score="0.212" data-tokens="120"><td class="rank">11</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><a class="model" href="https://cursor.com/" target="_blank" rel="noopener">Composer 2.5</a></td><td><span class="fam">cursor-agent 2026.06.15</span></td><td class="effcell"><span class="efftxt" title="agent default — effort ladder not published">—</span></td><td class="barcell"><div class="bar"><i style="width:57.8%"></i></div></td><td class="score">0.212</td><td class="toks">120K</td><td class="cost" title="cursor-agent doesn't report cost; only a $3/$15 fast-variant rate is published (no cached-token rate, variant unconfirmed)">—</td></tr>
+        <tr data-score="0.205" data-tokens="272" data-cost="3.33"><td class="rank">12</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.5</a></td><td><span class="fam">codex 0.134 · medium</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:55.9%"></i></div></td><td class="score">0.205</td><td class="toks">272K</td><td class="cost" data-cost="3.33">$3.33</td></tr>
+        <tr data-score="0.204" data-tokens=""><td class="rank">13</td><td><img class="lblogo" src="figs/github-copilot.png" alt="GitHub Copilot"><a class="model" href="https://microsoft.ai/" target="_blank" rel="noopener">MAI-Code-1-Flash</a></td><td><span class="fam">copilot 1.0.68</span></td><td class="effcell"><span class="efftxt" title="copilot default effort (not explicitly set); MAI-Code-1-Flash exposes low/medium/high">—</span></td><td class="barcell"><div class="bar"><i style="width:55.6%"></i></div></td><td class="score">0.204</td><td class="toks" title="real input+output tokens (median over 10 tasks, from OpenTelemetry gen_ai.usage.*) — but Copilot re-sends the full context on each of ~55 LLM calls/task with no cache discount, so not comparable to the other rows' non-cached input+output; excluded from the token sort">7.4M<sup>†</sup></td><td class="cost" title="GitHub Copilot bills in AI-credits (AIU), not USD; no USD cost or cache-token breakdown is exposed">—</td></tr>
+        <tr data-score="0.194" data-tokens="646" data-cost="1.83"><td class="rank">14</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.4-mini</a></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:52.9%"></i></div></td><td class="score">0.194</td><td class="toks">646K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
+        <tr data-score="0.190" data-tokens=""><td class="rank">15</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.4</a></td><td><span class="fam">codex 0.134</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 4"><i class="on"></i><i class="cur"></i><i></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:51.8%"></i></div></td><td class="score">0.190</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
+        <tr data-score="0.145" data-tokens=""><td class="rank">16</td><td><img class="lblogo" src="figs/anti-gravity.png" alt="Antigravity"><a class="model" href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini 3.5 Flash</a></td><td><span class="fam">antigravity</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:39.5%"></i></div></td><td class="score">0.145</td><td class="toks" title="no local logs">—</td><td class="cost" title="no local logs captured for this run">—</td></tr>
+        <tr data-score="0.105" data-tokens="224" data-cost="1.03"><td class="rank">17</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><a class="model" href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Haiku 4.5</a></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:28.6%"></i></div></td><td class="score">0.105</td><td class="toks">224K</td><td class="cost" data-cost="1.03">$1.03</td></tr>
       </tbody>
     </table>
     <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release</strong> (Codex-CLI 0.134–0.144 / Claude Code 2.1.152), with a free choice of stack. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
@@ -288,72 +291,140 @@
   <section id="cost">
     <h2>Cost &amp; speed</h2>
     <div class="h2sub">Tokens &amp; wall-clock per task</div>
-    <p class="lead">Median over the 10 apps — the median is outlier-robust, so a single runaway or oversized task doesn't skew a model's value. Bars are colored by harness.</p>
+    <p class="lead">Median over the 10 apps — the median is outlier-robust, so a single runaway or oversized task doesn't skew a model's value. Bars are colored by token type.</p>
+    <div class="lbsort" style="margin-top:12px;margin-bottom:4px;">
+      <label for="costsort">Sort charts by</label>
+      <select id="costsort">
+        <option value="default">Leaderboard order</option>
+        <option value="tokens">Total tokens (low→high)</option>
+        <option value="time">Time per task (fast→slow)</option>
+      </select>
+    </div>
     <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;">
       <figure style="flex:1 1 380px;min-width:300px;">
         <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px;">Tokens per task</div><div style="font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-bottom:6px;"><span style="color:#b9c2cc;font-weight:700">■</span> cache input &nbsp; <span style="color:#c2410c;font-weight:700">■</span> input (non-cached) &nbsp; <span style="color:#2f9e44;font-weight:700">■</span> output</div>
         <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 8px;">
-<svg viewBox="0 0 466 300" width="100%" font-family="var(--mono)">
+<svg class="costsvg" viewBox="0 0 466 300" width="100%" font-family="var(--mono)">
+<g class="crow" data-model="Grok 4.5" data-idx="0">
 <text x="98" y="28" text-anchor="end" font-size="10.5" fill="#15171c">Grok 4.5</text>
+<clipPath id="tokclip0"><rect x="104" y="18" width="59.1" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip0)">
 <rect x="104.0" y="18" width="55.2" height="13" fill="#b9c2cc"/>
 <rect x="159.2" y="18" width="2.7" height="13" fill="#c2410c"/>
 <rect x="161.8" y="18" width="1.3" height="13" fill="#2f9e44"/>
+</g>
 <text x="168.2" y="28" font-size="10" font-weight="700" fill="#15171c">2.6M</text>
+</g>
+<g class="crow" data-model="GPT-5.6-sol" data-idx="1">
 <text x="98" y="51" text-anchor="end" font-size="10.5" fill="#15171c">GPT-5.6-sol</text>
+<clipPath id="tokclip1"><rect x="104" y="41" width="97.1" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip1)">
 <rect x="104.0" y="41" width="88.8" height="13" fill="#b9c2cc"/>
 <rect x="192.8" y="41" width="7.4" height="13" fill="#c2410c"/>
 <rect x="200.2" y="41" width="0.9" height="13" fill="#2f9e44"/>
+</g>
 <text x="206.1" y="51" font-size="10" font-weight="700" fill="#15171c">4.2M</text>
+</g>
+<g class="crow" data-model="fable-5" data-idx="2">
 <text x="98" y="74" text-anchor="end" font-size="10.5" fill="#15171c">fable-5</text>
+<clipPath id="tokclip2"><rect x="104" y="64" width="273.6" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip2)">
 <rect x="104.0" y="64" width="263.0" height="13" fill="#b9c2cc"/>
 <rect x="367.0" y="64" width="7.4" height="13" fill="#c2410c"/>
 <rect x="374.3" y="64" width="3.3" height="13" fill="#2f9e44"/>
+</g>
 <text x="382.6" y="74" font-size="10" font-weight="700" fill="#15171c">11.9M</text>
+</g>
+<g class="crow" data-model="GLM-5.2" data-idx="3">
 <text x="98" y="97" text-anchor="end" font-size="10.5" fill="#15171c">GLM-5.2</text>
+<clipPath id="tokclip3"><rect x="104" y="87" width="261.6" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip3)">
 <rect x="104.0" y="87" width="254.7" height="13" fill="#b9c2cc"/>
 <rect x="358.7" y="87" width="5.3" height="13" fill="#c2410c"/>
 <rect x="364.0" y="87" width="1.6" height="13" fill="#2f9e44"/>
+</g>
 <text x="370.6" y="97" font-size="10" font-weight="700" fill="#15171c">11.3M</text>
+</g>
+<g class="crow" data-model="Opus 4.8" data-idx="4">
 <text x="98" y="120" text-anchor="end" font-size="10.5" fill="#15171c">Opus 4.8</text>
+<clipPath id="tokclip4"><rect x="104" y="110" width="211.4" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip4)">
 <rect x="104.0" y="110" width="203.9" height="13" fill="#b9c2cc"/>
 <rect x="307.9" y="110" width="5.1" height="13" fill="#c2410c"/>
 <rect x="313.0" y="110" width="2.4" height="13" fill="#2f9e44"/>
+</g>
 <text x="320.4" y="120" font-size="10" font-weight="700" fill="#15171c">9.2M</text>
+</g>
+<g class="crow" data-model="GPT-5.5 high" data-idx="5">
 <text x="98" y="143" text-anchor="end" font-size="10.5" fill="#15171c">GPT-5.5 high</text>
+<clipPath id="tokclip5"><rect x="104" y="133" width="81.3" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip5)">
 <rect x="104.0" y="133" width="75.0" height="13" fill="#b9c2cc"/>
 <rect x="179.0" y="133" width="5.5" height="13" fill="#c2410c"/>
 <rect x="184.5" y="133" width="0.8" height="13" fill="#2f9e44"/>
+</g>
 <text x="190.3" y="143" font-size="10" font-weight="700" fill="#15171c">3.5M</text>
+</g>
+<g class="crow" data-model="Sonnet 4.6" data-idx="6">
 <text x="98" y="166" text-anchor="end" font-size="10.5" fill="#15171c">Sonnet 4.6</text>
+<clipPath id="tokclip6"><rect x="104" y="156" width="153.5" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip6)">
 <rect x="104.0" y="156" width="149.8" height="13" fill="#b9c2cc"/>
 <rect x="253.8" y="156" width="2.3" height="13" fill="#c2410c"/>
 <rect x="256.1" y="156" width="1.4" height="13" fill="#2f9e44"/>
+</g>
 <text x="262.4" y="166" font-size="10" font-weight="700" fill="#15171c">6.7M</text>
+</g>
+<g class="crow" data-model="Opus 4.7" data-idx="7">
 <text x="98" y="189" text-anchor="end" font-size="10.5" fill="#15171c">Opus 4.7</text>
+<clipPath id="tokclip7"><rect x="104" y="179" width="188.4" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip7)">
 <rect x="104.0" y="179" width="183.5" height="13" fill="#b9c2cc"/>
 <rect x="287.5" y="179" width="3.2" height="13" fill="#c2410c"/>
 <rect x="290.7" y="179" width="1.7" height="13" fill="#2f9e44"/>
+</g>
 <text x="297.4" y="189" font-size="10" font-weight="700" fill="#15171c">8.2M</text>
+</g>
+<g class="crow" data-model="Muse-Spark-1.1" data-idx="8">
 <text x="98" y="212" text-anchor="end" font-size="10.5" fill="#15171c">Muse-Spark-1.1</text>
+<clipPath id="tokclip8"><rect x="104" y="202" width="98.5" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip8)">
 <rect x="104.0" y="202" width="11.6" height="13" fill="#b9c2cc"/>
 <rect x="115.6" y="202" width="85.7" height="13" fill="#c2410c"/>
 <rect x="201.3" y="202" width="1.2" height="13" fill="#2f9e44"/>
+</g>
 <text x="207.5" y="212" font-size="10" font-weight="700" fill="#15171c">4.3M</text>
+</g>
+<g class="crow" data-model="Composer 2.5" data-idx="9">
 <text x="98" y="235" text-anchor="end" font-size="10.5" fill="#15171c">Composer 2.5</text>
+<clipPath id="tokclip9"><rect x="104" y="225" width="42.0" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip9)">
 <rect x="104.0" y="225" width="39.2" height="13" fill="#b9c2cc"/>
 <rect x="143.2" y="225" width="1.8" height="13" fill="#c2410c"/>
 <rect x="145.0" y="225" width="1.0" height="13" fill="#2f9e44"/>
+</g>
 <text x="151.0" y="235" font-size="10" font-weight="700" fill="#15171c">1.8M</text>
+</g>
+<g class="crow" data-model="GPT-5.4-mini" data-idx="10">
 <text x="98" y="258" text-anchor="end" font-size="10.5" fill="#15171c">GPT-5.4-mini</text>
+<clipPath id="tokclip10"><rect x="104" y="248" width="290.0" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip10)">
 <rect x="104.0" y="248" width="275.2" height="13" fill="#b9c2cc"/>
 <rect x="379.2" y="248" width="12.1" height="13" fill="#c2410c"/>
 <rect x="391.3" y="248" width="2.7" height="13" fill="#2f9e44"/>
+</g>
 <text x="399.0" y="258" font-size="10" font-weight="700" fill="#15171c">12.6M</text>
+</g>
+<g class="crow" data-model="Haiku 4.5" data-idx="11">
 <text x="98" y="281" text-anchor="end" font-size="10.5" fill="#15171c">Haiku 4.5</text>
+<clipPath id="tokclip11"><rect x="104" y="271" width="148.5" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip11)">
 <rect x="104.0" y="271" width="144.8" height="13" fill="#b9c2cc"/>
 <rect x="248.8" y="271" width="2.6" height="13" fill="#c2410c"/>
 <rect x="251.3" y="271" width="1.2" height="13" fill="#2f9e44"/>
+</g>
 <text x="257.5" y="281" font-size="10" font-weight="700" fill="#15171c">6.4M</text>
+</g>
 </svg>
         </div>
         <figcaption>Median tokens per task, <strong>stacked by type</strong>: cache-read input (cheap, billed ~10%), non-cached input, and output. Cache-read dominates for every model except <strong>Muse-Spark-1.1</strong>, whose bar is almost all fresh input — Meta's endpoint barely caches.</figcaption>
@@ -361,44 +432,68 @@
       <figure style="flex:1 1 380px;min-width:300px;">
         <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">Time per task</div>
         <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 8px;">
-<svg viewBox="0 0 466 300" width="100%" font-family="var(--mono)">
+<svg class="costsvg" viewBox="0 0 466 300" width="100%" font-family="var(--mono)">
 <line x1="249" y1="12" x2="249" y2="290" stroke="#efece4"/>
+<g class="crow" data-model="Grok 4.5" data-idx="0">
 <text x="98" y="28" text-anchor="end" font-size="10.5" fill="#15171c">Grok 4.5</text>
 <rect x="104" y="18" width="60.7" height="13" rx="3" fill="#8a94a0"/>
 <text x="169.7" y="28" font-size="10" font-weight="700" fill="#15171c">9m</text>
+</g>
+<g class="crow" data-model="GPT-5.6-sol" data-idx="1">
 <text x="98" y="51" text-anchor="end" font-size="10.5" fill="#15171c">GPT-5.6-sol</text>
 <rect x="104" y="41" width="121.4" height="13" rx="3" fill="#8a94a0"/>
 <text x="230.4" y="51" font-size="10" font-weight="700" fill="#15171c">18m</text>
+</g>
+<g class="crow" data-model="fable-5" data-idx="2">
 <text x="98" y="74" text-anchor="end" font-size="10.5" fill="#15171c">fable-5</text>
 <rect x="104" y="64" width="290.0" height="13" rx="3" fill="#8a94a0"/>
 <text x="399.0" y="74" font-size="10" font-weight="700" fill="#15171c">43m</text>
+</g>
+<g class="crow" data-model="GLM-5.2" data-idx="3">
 <text x="98" y="97" text-anchor="end" font-size="10.5" fill="#15171c">GLM-5.2</text>
 <rect x="104" y="87" width="195.6" height="13" rx="3" fill="#8a94a0"/>
 <text x="304.6" y="97" font-size="10" font-weight="700" fill="#15171c">29m</text>
+</g>
+<g class="crow" data-model="Opus 4.8" data-idx="4">
 <text x="98" y="120" text-anchor="end" font-size="10.5" fill="#15171c">Opus 4.8</text>
 <rect x="104" y="110" width="188.8" height="13" rx="3" fill="#8a94a0"/>
 <text x="297.8" y="120" font-size="10" font-weight="700" fill="#15171c">28m</text>
+</g>
+<g class="crow" data-model="GPT-5.5 high" data-idx="5">
 <text x="98" y="143" text-anchor="end" font-size="10.5" fill="#15171c">GPT-5.5 high</text>
 <rect x="104" y="133" width="101.2" height="13" rx="3" fill="#8a94a0"/>
 <text x="210.2" y="143" font-size="10" font-weight="700" fill="#15171c">15m</text>
+</g>
+<g class="crow" data-model="Sonnet 4.6" data-idx="6">
 <text x="98" y="166" text-anchor="end" font-size="10.5" fill="#15171c">Sonnet 4.6</text>
 <rect x="104" y="156" width="141.6" height="13" rx="3" fill="#8a94a0"/>
 <text x="250.6" y="166" font-size="10" font-weight="700" fill="#15171c">21m</text>
+</g>
+<g class="crow" data-model="Opus 4.7" data-idx="7">
 <text x="98" y="189" text-anchor="end" font-size="10.5" fill="#15171c">Opus 4.7</text>
 <rect x="104" y="179" width="107.9" height="13" rx="3" fill="#8a94a0"/>
 <text x="216.9" y="189" font-size="10" font-weight="700" fill="#15171c">16m</text>
+</g>
+<g class="crow" data-model="Muse-Spark-1.1" data-idx="8">
 <text x="98" y="212" text-anchor="end" font-size="10.5" fill="#15171c">Muse-Spark-1.1</text>
 <rect x="104" y="202" width="74.2" height="13" rx="3" fill="#8a94a0"/>
 <text x="183.2" y="212" font-size="10" font-weight="700" fill="#15171c">11m</text>
+</g>
+<g class="crow" data-model="Composer 2.5" data-idx="9">
 <text x="98" y="235" text-anchor="end" font-size="10.5" fill="#15171c">Composer 2.5</text>
 <rect x="104" y="225" width="67.4" height="13" rx="3" fill="#8a94a0"/>
 <text x="176.4" y="235" font-size="10" font-weight="700" fill="#15171c">10m</text>
+</g>
+<g class="crow" data-model="GPT-5.4-mini" data-idx="10">
 <text x="98" y="258" text-anchor="end" font-size="10.5" fill="#15171c">GPT-5.4-mini</text>
 <rect x="104" y="248" width="155.1" height="13" rx="3" fill="#8a94a0"/>
 <text x="264.1" y="258" font-size="10" font-weight="700" fill="#15171c">23m</text>
+</g>
+<g class="crow" data-model="Haiku 4.5" data-idx="11">
 <text x="98" y="281" text-anchor="end" font-size="10.5" fill="#15171c">Haiku 4.5</text>
 <rect x="104" y="271" width="80.9" height="13" rx="3" fill="#8a94a0"/>
 <text x="189.9" y="281" font-size="10" font-weight="700" fill="#15171c">12m</text>
+</g>
 </svg>
         </div>
         <figcaption>Median wall-clock to build each app (agent run only, excludes eval).</figcaption>
@@ -591,6 +686,44 @@
     });
   }
   sel.addEventListener('change', function () { rerank(this.value); });
+})();
+
+// ---- Cost & speed charts: reorder bars by tokens / time ----
+(function () {
+  var sel = document.getElementById('costsort');
+  var svgs = [].slice.call(document.querySelectorAll('.costsvg'));
+  if (!sel || !svgs.length) return;
+  // DOM order of the wrapped .crow groups (data-idx 0..11), with sort keys.
+  var DATA = [
+    {m:'Grok 4.5',       tok:2.6,  time:9},
+    {m:'GPT-5.6-sol',    tok:4.2,  time:18},
+    {m:'fable-5',        tok:11.9, time:43},
+    {m:'GLM-5.2',        tok:11.3, time:29},
+    {m:'Opus 4.8',       tok:9.2,  time:28},
+    {m:'GPT-5.5 high',   tok:3.5,  time:15},
+    {m:'Sonnet 4.6',     tok:6.7,  time:21},
+    {m:'Opus 4.7',       tok:8.2,  time:16},
+    {m:'Muse-Spark-1.1', tok:4.3,  time:11},
+    {m:'Composer 2.5',   tok:1.8,  time:10},
+    {m:'GPT-5.4-mini',   tok:12.6, time:23},
+    {m:'Haiku 4.5',      tok:6.4,  time:12}
+  ];
+  var STEP = 23; // px between rows in the SVG layout
+  function apply(val) {
+    var key = val === 'tokens' ? 'tok' : (val === 'time' ? 'time' : null);
+    var arr = DATA.map(function (d, i) { return {m:d.m, i:i, v:key ? d[key] : i}; });
+    arr.sort(function (a, b) { return a.v - b.v; });
+    var pos = {};
+    arr.forEach(function (d, p) { pos[d.m] = p; });
+    svgs.forEach(function (svg) {
+      [].slice.call(svg.querySelectorAll('.crow')).forEach(function (g) {
+        var i = +g.getAttribute('data-idx');
+        var p = pos[g.getAttribute('data-model')];
+        g.style.transform = 'translateY(' + (STEP * (p - i)) + 'px)';
+      });
+    });
+  }
+  sel.addEventListener('change', function () { apply(this.value); });
 })();
 </script>
 </body>
