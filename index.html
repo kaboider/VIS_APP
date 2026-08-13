@@ -528,7 +528,7 @@
   <section id="trend">
     <h2>Co-evolution</h2>
     <div class="h2sub">Harness × LLM — co-evolving over releases</div>
-    <p class="lead">An agent is a <em>model inside a harness</em>, and both ship on their own cadence. Tracking the same model across harness releases shows the two co-evolving — sometimes lifting each other, sometimes regressing. Combined score by harness release; a harness with only one measured release is shown as a snapshot rather than a trend.</p>
+    <p class="lead">An agent is a <em>model inside a harness</em>, and both ship on their own cadence. Tracking the same model across harness releases shows the two co-evolving — sometimes lifting each other, sometimes regressing. Combined score by harness release.</p>
     <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;">
       <!-- Codex panel -->
       <figure style="flex:1 1 380px;">
@@ -593,36 +593,8 @@
         </div>
         <figcaption>Claude Code — Sonnet 4.6 rises monotonically across releases; fable-5 (2.1.152) tops the field; Haiku 4.5 trails. Opus 4.7/4.8 shown at 2.1.126.</figcaption>
       </figure>
-      <!-- CAMEL panel -->
-      <figure style="flex:1 1 380px;">
-        <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 6px 4px;">
-          <svg viewBox="0 0 460 346" width="100%" font-family="var(--mono)">
-            <g stroke="#efece4" stroke-width="1">
-              <line x1="44" y1="54" x2="444" y2="54"/><line x1="44" y1="121" x2="444" y2="121"/><line x1="44" y1="189" x2="444" y2="189"/>
-            </g>
-            <g fill="#9a9486" font-size="11" text-anchor="end">
-              <text x="39" y="58">0.60</text><text x="39" y="125">0.40</text><text x="39" y="193">0.20</text><text x="39" y="259">0.00</text>
-            </g>
-            <line x1="44" y1="20" x2="44" y2="256" stroke="#d8d4c8"/><line x1="44" y1="256" x2="444" y2="256" stroke="#d8d4c8"/>
-            <line x1="244" y1="69.5" x2="244" y2="80.3" stroke="#c2410c" stroke-width="2"/>
-            <line x1="237" y1="69.5" x2="251" y2="69.5" stroke="#c2410c" stroke-width="2"/>
-            <line x1="237" y1="80.3" x2="251" y2="80.3" stroke="#c2410c" stroke-width="2"/>
-            <circle cx="244" cy="74.9" r="5" fill="#c2410c"/>
-            <text x="257" y="70" fill="#15171c" font-size="11" font-weight="700">0.538 ± 0.016</text>
-            <g text-anchor="middle">
-              <text x="244" y="272" fill="#5b6270" font-size="12">0.2.90</text>
-              <text x="244" y="285" fill="#9a9486" font-size="10">Aug 12</text>
-            </g>
-            <text x="244" y="305" fill="#9a9486" font-size="11" text-anchor="middle">CAMEL version (run date) →</text>
-            <g font-size="10.5">
-              <circle cx="136" cy="332" r="4.5" fill="#c2410c"/><text x="145" y="336" fill="#15171c">GPT-5.6-sol · Single · High</text>
-            </g>
-          </svg>
-        </div>
-        <figcaption>CAMEL 0.2.90 — GPT-5.6-sol single-agent, high effort: mean 0.538 ± 0.016 across three independent complete 10-task batches. One measured harness release, so this is a snapshot.</figcaption>
-      </figure>
     </div>
-    <p class="muted note">Mean C4 combined score (10 tasks per batch, failures scored 0). Codex-CLI and Claude Code use independent version schemes. CAMEL currently has one versioned release and is therefore shown in its own scale as a three-batch mean ± sample SD, not connected into a release line.</p>
+    <p class="muted note">Mean C4 combined score (n=10, failures scored 0). Codex-CLI and Claude Code use independent version schemes, shown as separate panels.</p>
   </section>
 
   <!-- ============ EVALUATION (brief) ============ -->
