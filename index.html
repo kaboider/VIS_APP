@@ -9,6 +9,7 @@
 <meta name="author" content="JunJia Guo, Yuhang Yao, Jiawei Zhou, Jingdi Chen" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <link rel="canonical" href="https://vista-benchmark.org/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2410c'/%3E%3Cpath d='M13 15h11l8 29 8-29h11L38 51H26z' fill='white'/%3E%3C/svg%3E" />
 <meta name="theme-color" content="#c2410c" />
 
 <!-- Open Graph / Facebook / LinkedIn / WeChat -->
@@ -123,8 +124,10 @@
   .muted{color:var(--muted);}
 
   /* leaderboard */
-  .lb{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;
-    border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:18px;}
+  .lb-scroll{width:100%;overflow-x:auto;margin-top:18px;border-radius:12px;
+    -webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain;}
+  .lb{width:100%;min-width:880px;border-collapse:collapse;background:var(--card);font-size:15px;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;}
   .lb th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;
     color:var(--muted);text-align:left;padding:13px 16px;border-bottom:2px solid var(--line);}
   .lb td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:middle;}
@@ -158,7 +161,7 @@
   .bar>i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#e0742f,var(--accent));border-radius:6px;}
   .lb tr:not(.r1) .bar>i{background:#b9c2cc;}
   .lb tr.r2 .bar>i,.lb tr.r3 .bar>i{background:#cdb27a;}
-  .score{font-family:var(--mono);font-weight:700;color:var(--ink);text-align:right;width:128px;font-size:15.5px;white-space:nowrap;}
+  .score{font-family:var(--mono);font-weight:700;color:var(--ink);text-align:left;width:128px;font-size:15.5px;white-space:nowrap;}
   .score .sd{font-size:11px;font-weight:500;color:var(--muted);}
   .note{font-size:13px;margin-top:14px;}
 
@@ -220,6 +223,7 @@
       </select>
     </div>
 
+    <div class="lb-scroll" role="region" aria-label="Leaderboard table" tabindex="0">
     <table class="lb">
       <thead>
         <tr><th>#</th><th>Model</th><th>Harness</th><th>Effort</th><th class="barcell" colspan="2" style="text-align:center" title="Mean score; ± sample standard deviation is shown where repeated complete 10-app batches are available.">Combined score</th><th class="tokh" title="Median billable tokens per task — lower is leaner. See Cost &amp; speed.">Tokens</th><th class="costh" title="Real median API cost per task in USD (billed tokens × official provider pricing, cache included). Blank where the CLI does not expose cost and no per-token rate is available to compute it without guessing.">Cost</th></tr>
@@ -243,6 +247,7 @@
         <tr data-score="0.326" data-tokens=""><td class="rank">15</td><td><img class="lblogo" src="figs/github-copilot.png" alt="GitHub Copilot"><a class="model" href="https://microsoft.ai/" target="_blank" rel="noopener">MAI-Code-1-Flash</a></td><td><span class="fam">copilot 1.0.68</span></td><td class="effcell"><span class="efftxt" title="agent default — no named reasoning-effort level">—</span></td><td class="barcell"><div class="bar"><i style="width:61.2%"></i></div></td><td class="score">0.326</td><td class="toks" title="Copilot re-sends full context uncached; excluded from token sort">7.4M<sup>†</sup></td><td class="cost" title="Copilot bills in AI-credits, no USD exposed">—</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, scored under the <strong>content-based interaction criterion</strong> (a click counts only if it produces the corresponding observable content change), averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release with a complete 10-app batch</strong> (Codex-CLI 0.134–0.144.6 / Claude Code up to 2.1.215 / Cursor / Copilot / CAMEL), free choice of stack. Where repeated complete batches are available, <strong>± SD</strong> is the sample standard deviation of the independent 10-app batch means; the CAMEL 0.2.90 single-agent result uses three batches (n=3). <sup>§</sup>Rows marked § are averaged over fewer than 10 apps (Opus 5 over 9/10; Sonnet 4.6 and Muse-Spark over 8/10) — a few apps' containers no longer build (environment drift) and are excluded rather than scored 0. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
 
     <div class="h2sub" style="font-size:18px;margin-top:30px;">Reasoning effort used</div>
