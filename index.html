@@ -227,9 +227,10 @@
     <div class="lb-scroll" role="region" aria-label="Leaderboard table" tabindex="0">
     <table class="lb">
       <thead>
-        <tr><th>#</th><th>Model</th><th>Harness</th><th>Effort</th><th class="barcell" colspan="2" style="text-align:center" title="Mean score; ± sample standard deviation is shown where repeated complete 10-app batches are available.">Combined score</th><th class="tokh" title="Median billable tokens per task — lower is leaner. See Cost &amp; speed.">Tokens</th><th class="costh" title="Real median API cost per task in USD (billed tokens × official provider pricing, cache included). Blank where the CLI does not expose cost and no per-token rate is available to compute it without guessing.">Cost</th></tr>
+        <tr><th>#</th><th>Model</th><th>Harness</th><th>Effort</th><th class="barcell" colspan="2" style="text-align:center" title="Mean score; ± sample standard deviation is shown where repeated complete 10-app batches are available.">Combined score</th><th class="tokh" title="Median billable tokens per task — lower is leaner. See Cost &amp; speed.">Tokens</th><th class="costh" title="Median API cost per task in USD. Values are measured or estimated as documented in Cost &amp; speed.">Cost</th></tr>
       </thead>
       <tbody>
+        <tr data-score="0.552" data-tokens="438" data-cost="2.38"><td class="rank">1</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><a class="model" href="https://x.ai/" target="_blank" rel="noopener">Grok 4.6</a></td><td><span class="fam">cursor-agent 2026.08.11</span></td><td class="effcell"><span class="gdots" title="High · Cursor Grok 4.6 High variant"><i class="on"></i><i class="on"></i><i class="cur"></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100%"></i></div></td><td class="score" title="Mean of three independent complete 10-app C4 batches: 0.567, 0.563, 0.527. Sample SD across batch means; n=3. The invalid zero-score task attempt was replaced by its valid 0.505 rerun and is not included.">0.552 <span class="sd">± 0.022</span></td><td class="toks" title="Median non-cached input + output per task across the 30 valid task runs; cache reads excluded to match other leaderboard rows.">438K</td><td class="cost" data-cost="2.38" title="Theoretical median using captured tokens and Grok 4.5 public proxy rates; Cursor did not expose actual USD cost for these runs.">$2.38</td></tr>
         <tr data-score="0.538" data-tokens="90" data-cost="1.77"><td class="rank">1</td><td><img class="lblogo" src="figs/ChatGPT-Logo.png" alt="OpenAI"><a class="model" href="https://openai.com/" target="_blank" rel="noopener">GPT-5.6-sol</a></td><td><span class="fam">CAMEL 0.2.90 · Single</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6 (GPT-5.6-sol ladder: Low·Medium·High·Extra-high·Max·Ultra)"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100%"></i></div></td><td class="score" title="Mean of three independent complete 10-app C4 batches: 0.5567, 0.5288, 0.5289. Sample SD across batch means; n=3.">0.538 <span class="sd">± 0.016</span></td><td class="toks" title="Median non-cached input + output per task across 30 task runs; cache reads excluded to match the other leaderboard rows.">90K</td><td class="cost" data-cost="1.77" title="Estimated median per task from captured per-call usage and GPT-5.6-sol pricing, including the 1.25× cache-write premium. Without that premium: $1.68/task.">$1.77</td></tr>
         <tr class="r1" data-score="0.533" data-tokens="757" data-cost="12.04"><td class="rank">1</td><td><img class="lblogo" src="figs/claude-logo-png.png" alt="Claude"><a class="model" href="https://www.anthropic.com/claude" target="_blank" rel="noopener">fable-5</a></td><td><span class="fam">claude code 2.1.152</span></td><td class="effcell"><span class="gdots" title="High · level 3 of 6"><i class="on"></i><i class="on"></i><i class="cur"></i><i></i><i></i><i></i></span><span class="efftxt">High</span></td><td class="barcell"><div class="bar"><i style="width:100.0%"></i></div></td><td class="score">0.533</td><td class="toks">757K</td><td class="cost" data-cost="12.04">$12.04</td></tr>
         <tr class="r2" data-score="0.517" data-tokens="161" data-cost="1.83"><td class="rank">2</td><td><img class="lblogo" src="figs/cursor-logo.png" alt="Cursor"><a class="model" href="https://x.ai/" target="_blank" rel="noopener">Grok 4.5</a></td><td><span class="fam">cursor-agent 2026.07.01</span></td><td class="effcell"><span class="gdots" title="Medium · level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span><span class="efftxt">Med</span></td><td class="barcell"><div class="bar"><i style="width:97.0%"></i></div></td><td class="score">0.517</td><td class="toks">161K</td><td class="cost" data-cost="1.83">$1.83</td></tr>
@@ -249,7 +250,7 @@
       </tbody>
     </table>
     </div>
-    <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, scored under the <strong>content-based interaction criterion</strong> (a click counts only if it produces the corresponding observable content change), averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release with a complete 10-app batch</strong> (Codex-CLI 0.134–0.144.6 / Claude Code up to 2.1.215 / Cursor / Copilot / CAMEL), free choice of stack. Where repeated complete batches are available, <strong>± SD</strong> is the sample standard deviation of the independent 10-app batch means; the CAMEL 0.2.90 single-agent result uses three batches (n=3). <sup>§</sup>Rows marked § are averaged over fewer than 10 apps (Opus 5 over 9/10; Sonnet 4.6 and Muse-Spark over 8/10) — a few apps' containers no longer build (environment drift) and are excluded rather than scored 0. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
+    <p class="lead" style="margin-top:20px;">Agents are ranked by the <strong>Combined score S</strong> — DOM-grounded localization × behavior on human-annotated UI anchors, scored under the <strong>content-based interaction criterion</strong> (a click counts only if it produces the corresponding observable content change), averaged over 10 apps (failures count as 0). Each model runs on its <strong>latest harness release with a complete 10-app batch</strong> (Codex-CLI 0.134–0.144.6 / Claude Code up to 2.1.215 / Cursor / Copilot / CAMEL), free choice of stack. Where repeated complete batches are available, <strong>± SD</strong> is the sample standard deviation of the independent 10-app batch means; Grok 4.6 + Cursor and GPT-5.6-sol + CAMEL each use three complete batches (n=3, 30 valid task runs). <sup>§</sup>Rows marked § are averaged over fewer than 10 apps (Opus 5 over 9/10; Sonnet 4.6 and Muse-Spark over 8/10) — a few apps' containers no longer build (environment drift) and are excluded rather than scored 0. Condition <strong>C4</strong> gives the agent the richest spec: the page's <strong>rendered Figma image</strong> (a screenshot mockup) <em>and</em> its <strong>pruned Figma structure</strong> (the layout tree as JSON) — but no target framework.</p>
 
     <div class="h2sub" style="font-size:18px;margin-top:30px;">Reasoning effort used</div>
     <p class="lead" style="font-size:15px;">Each harness exposes a different reasoning-effort ladder, so levels aren't directly comparable. The highlighted dot marks the level each model ran at; the row length shows the granularity available. Notably, <strong>GLM-5.2 ran at its ceiling (max)</strong>, while the Claude and Codex models still had headroom above the level used.</p>
@@ -285,6 +286,11 @@
         <span class="effmodels"><img src="figs/cursor-logo.png" alt="Cursor">cursor-agent <span class="muted">(Grok 4.5: medium · high · xhigh)</span> — Grok 4.5 <span class="muted">(ran at high = "Medium")</span></span>
       </div>
       <div class="eff">
+        <span class="dots" title="High — Cursor Grok 4.6 High variant"><i class="on"></i><i class="on"></i><i class="cur"></i></span>
+        <span class="efflab"><b>High</b></span>
+        <span class="effmodels"><img src="figs/cursor-logo.png" alt="Cursor">cursor-agent 2026.08.11 — Grok 4.6 <span class="muted">(High; 30 valid task runs)</span></span>
+      </div>
+      <div class="eff">
         <span class="dots" title="Medium — level 2 of 3"><i class="on"></i><i class="cur"></i><i></i></span>
         <span class="efflab"><b>Medium</b> · 2 / 3</span>
         <span class="effmodels"><img src="figs/anti-gravity.png" alt="Antigravity">Antigravity <span class="muted">(3 levels: low · medium · high)</span> — Gemini 3.5 Flash</span>
@@ -297,7 +303,7 @@
   <section id="cost">
     <h2>Cost &amp; speed</h2>
     <div class="h2sub">Tokens &amp; wall-clock per task</div>
-    <p class="lead">Median over the available task runs — normally one 10-app batch; CAMEL 0.2.90 uses all three complete batches (30 runs). The median is outlier-robust, so a single runaway or oversized task doesn't skew a model's value. Bars are colored by token type.</p>
+    <p class="lead">Median over the available task runs — normally one 10-app batch; Grok 4.6 + Cursor and CAMEL 0.2.90 each use all three complete batches (30 runs). The median is outlier-robust, so a single runaway or oversized task doesn't skew a model's value. Bars are colored by token type.</p>
     <div class="lbsort" style="margin-top:12px;margin-bottom:4px;">
       <label for="costsort">Sort charts by</label>
       <select id="costsort">
@@ -310,7 +316,7 @@
       <figure style="flex:1 1 380px;min-width:300px;">
         <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px;">Tokens per task</div><div style="font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-bottom:6px;"><span style="color:#b9c2cc;font-weight:700">■</span> cache input &nbsp; <span style="color:#c2410c;font-weight:700">■</span> input (non-cached) &nbsp; <span style="color:#2f9e44;font-weight:700">■</span> output</div>
         <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 8px;">
-<svg class="costsvg" viewBox="0 0 466 323" width="100%" font-family="var(--mono)">
+<svg class="costsvg" viewBox="0 0 466 346" width="100%" font-family="var(--mono)">
 <g class="crow" data-model="Grok 4.5" data-idx="0">
 <text x="98" y="24" text-anchor="end" font-size="9.5" fill="#15171c">Grok 4.5</text><text x="98" y="31" text-anchor="end" font-size="7.5" fill="#6b7280">Cursor 2026.07.01</text>
 <clipPath id="tokclip0"><rect x="104" y="18" width="59.1" height="13" rx="3"/></clipPath>
@@ -441,15 +447,25 @@
 </g>
 <text x="142.3" y="304" font-size="10" font-weight="700" fill="#15171c">1.45M</text>
 </g>
+<g class="crow" data-model="Grok 4.6" data-idx="13">
+<text x="98" y="323" text-anchor="end" font-size="9.5" fill="#15171c">Grok 4.6</text><text x="98" y="330" text-anchor="end" font-size="7.5" fill="#6b7280">Cursor 2026.08.11</text>
+<clipPath id="tokclip13"><rect x="104" y="317" width="97.4" height="13" rx="3"/></clipPath>
+<g clip-path="url(#tokclip13)">
+<rect x="104.0" y="317" width="87.3" height="13" fill="#b9c2cc"/>
+<rect x="191.3" y="317" width="8.3" height="13" fill="#c2410c"/>
+<rect x="199.6" y="317" width="1.8" height="13" fill="#2f9e44"/>
+</g>
+<text x="206.4" y="327" font-size="10" font-weight="700" fill="#15171c">4.24M</text>
+</g>
 </svg>
         </div>
-        <figcaption>Median tokens per task, <strong>stacked by type</strong>: cache-read input, non-cached input, and output. Harness and version are shown beneath each model. The CAMEL row includes 1.45M total tokens/task, of which about 95.5% are cache reads.</figcaption>
+        <figcaption>Median tokens per task, <strong>stacked by type</strong>: cache-read input, non-cached input, and output. Harness and version are shown beneath each model. Grok 4.6 uses 4.24M total tokens/task (3.786M cache, 358K non-cached input, 77.7K output); CAMEL uses 1.45M total, about 95.5% cache reads.</figcaption>
       </figure>
       <figure style="flex:1 1 380px;min-width:300px;">
         <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px;">Time per task</div><div style="font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-bottom:6px;">model / harness &nbsp;·&nbsp; agent run only</div>
         <div style="border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 8px;">
-<svg class="costsvg" viewBox="0 0 466 323" width="100%" font-family="var(--mono)">
-<line x1="249" y1="12" x2="249" y2="313" stroke="#efece4"/>
+<svg class="costsvg" viewBox="0 0 466 346" width="100%" font-family="var(--mono)">
+<line x1="249" y1="12" x2="249" y2="336" stroke="#efece4"/>
 <g class="crow" data-model="Grok 4.5" data-idx="0">
 <text x="98" y="24" text-anchor="end" font-size="9.5" fill="#15171c">Grok 4.5</text><text x="98" y="31" text-anchor="end" font-size="7.5" fill="#6b7280">Cursor 2026.07.01</text>
 <rect x="104" y="18" width="61.7" height="13" rx="3" fill="#8a94a0"/>
@@ -515,14 +531,19 @@
 <rect x="104" y="294" width="50.2" height="13" rx="3" fill="#8a94a0"/>
 <text x="159.2" y="304" font-size="10" font-weight="700" fill="#15171c">7.5m</text>
 </g>
+<g class="crow" data-model="Grok 4.6" data-idx="13">
+<text x="98" y="323" text-anchor="end" font-size="9.5" fill="#15171c">Grok 4.6</text><text x="98" y="330" text-anchor="end" font-size="7.5" fill="#6b7280">Cursor 2026.08.11</text>
+<rect x="104" y="317" width="136.1" height="13" rx="3" fill="#8a94a0"/>
+<text x="245.1" y="327" font-size="10" font-weight="700" fill="#15171c">20.3m</text>
+</g>
 </svg>
         </div>
-        <figcaption>Median wall-clock to build each app (agent run only, excludes eval). Harness is shown beneath each model; CAMEL uses the median over all 30 task runs.</figcaption>
+        <figcaption>Median wall-clock to build each app (agent run only, excludes eval). Harness is shown beneath each model; Grok 4.6 and CAMEL each use the median over all 30 valid task runs.</figcaption>
       </figure>
     </div>
-    <p class="muted note"><strong>Trajectory audit:</strong> token and time values were recomputed from each run's terminal usage/result event. Unless noted, each row uses its named complete 10-task C4 trajectory group. CAMEL uses 30 runs (three batches). Composer 2.5 has only 8 parseable terminal result events, so its 1.9M / 10.2m medians are n=8. The chart's Opus 4.8, Opus 4.7 and GPT-5.5 data come from the locally archived Claude Code 2.1.152, Claude Code 2.1.152 and Codex 0.134 trajectories respectively; the harness sublabels make this explicit even where the leaderboard above has a newer scored harness.</p>
-    <p class="muted note"><strong>How tokens are counted:</strong> leaderboard Tokens uses <em>non-cached input + output</em> so cache re-reads do not make multi-turn harnesses look artificially heavy. The stacked chart shows cached input, non-cached input, and output. For CAMEL 0.2.90, the 30-run medians are 1.356M cached input, 66.8K non-cached input, 21.9K output, and 90.2K non-cached input + output. Claude/Cursor use <code>input + cache-creation + output</code>; Codex/CAMEL use <code>(input − cached) + output</code>. Codex's <code>output_tokens</code> already includes its <code>reasoning_output_tokens</code>; the latter must not be added again. GLM-5.2 totals come from each run's terminal <code>result</code>, since z.ai's endpoint leaves per-message usage empty.</p>
-    <p class="muted note"><strong>How cost is estimated:</strong> median API cost per task = each run's captured billed tokens × provider pricing, then the median across task runs. GPT-5.6-sol uses OpenAI's <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol">$5 / $0.50 / $30</a>; GPT-5.4-mini uses <a href="https://developers.openai.com/api/docs/models/gpt-5.4-mini">$0.75 / $0.075 / $4.50</a>; GLM-5.2 uses z.ai's <a href="https://docs.z.ai/guides/overview/pricing">$1.40 / $0.26 / $4.40</a> input/cached/output rates. Recomputed medians are Sol/Codex <strong>$4.49</strong>, GPT-5.4-mini <strong>$1.68</strong>, GLM-5.2 <strong>$3.66</strong>, and Muse-Spark <strong>$5.16</strong> using the captured Meta rate card. Claude rows use the CLI's own <code>total_cost_usd</code> (fable-5 $12.04; Sonnet 4.6 $3.85). GPT-5.6-sol + CAMEL is an estimate of <strong>$1.77/task</strong> / <strong>$57.01 for 30 runs</strong>, including the documented 1.25× cache-write premium; without it, $1.68/task. Grok 4.5's $1.83 is from Cursor's dashboard total and cannot be independently reconstructed from trajectory pricing.</p>
+    <p class="muted note"><strong>Trajectory audit:</strong> token and time values were recomputed from each run's terminal usage/result event. Unless noted, each row uses its named complete 10-task C4 trajectory group. Grok 4.6 and CAMEL each use 30 valid runs (three batches). Grok 4.6's archived zero-score attempt is excluded and replaced by the valid 0.505 rerun. Composer 2.5 has only 8 parseable terminal result events, so its 1.9M / 10.2m medians are n=8. The chart's Opus 4.8, Opus 4.7 and GPT-5.5 data come from the locally archived Claude Code 2.1.152, Claude Code 2.1.152 and Codex 0.134 trajectories respectively; the harness sublabels make this explicit even where the leaderboard above has a newer scored harness.</p>
+    <p class="muted note"><strong>How tokens are counted:</strong> leaderboard Tokens uses <em>non-cached input + output</em> so cache re-reads do not make multi-turn harnesses look artificially heavy. The stacked chart shows cached input, non-cached input, and output. Grok 4.6's 30-run medians are 3.786M cached input, 358.2K non-cached input, 77.7K output, and 438.4K non-cached input + output. For CAMEL 0.2.90, the corresponding medians are 1.356M, 66.8K, 21.9K, and 90.2K. Claude/Cursor use <code>input + cache-creation + output</code>; Codex/CAMEL use <code>(input − cached) + output</code>. Codex's <code>output_tokens</code> already includes its <code>reasoning_output_tokens</code>; the latter must not be added again. GLM-5.2 totals come from each run's terminal <code>result</code>, since z.ai's endpoint leaves per-message usage empty.</p>
+    <p class="muted note"><strong>How cost is estimated:</strong> median API cost per task = each run's captured billed tokens × provider pricing, then the median across task runs. GPT-5.6-sol uses OpenAI's <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol">$5 / $0.50 / $30</a>; GPT-5.4-mini uses <a href="https://developers.openai.com/api/docs/models/gpt-5.4-mini">$0.75 / $0.075 / $4.50</a>; GLM-5.2 uses z.ai's <a href="https://docs.z.ai/guides/overview/pricing">$1.40 / $0.26 / $4.40</a> input/cached/output rates. Recomputed medians are Sol/Codex <strong>$4.49</strong>, GPT-5.4-mini <strong>$1.68</strong>, GLM-5.2 <strong>$3.66</strong>, and Muse-Spark <strong>$5.16</strong> using the captured Meta rate card. Claude rows use the CLI's own <code>total_cost_usd</code> (fable-5 $12.04; Sonnet 4.6 $3.85). GPT-5.6-sol + CAMEL is an estimate of <strong>$1.77/task</strong> / <strong>$57.01 for 30 runs</strong>, including the documented 1.25× cache-write premium; without it, $1.68/task. Grok 4.6 is a theoretical estimate of <strong>$2.38/task</strong> / <strong>$71.04 for 30 runs</strong> using captured tokens and Grok 4.5 public rates as a proxy because Cursor reports no USD total; it is not an observed bill. Grok 4.5's $1.83 is from Cursor's dashboard total and cannot be independently reconstructed from trajectory pricing.</p>
   </section>
 
   <!-- ============ HARNESS TREND ============ -->
@@ -724,8 +745,9 @@
   var sel = document.getElementById('costsort');
   var svgs = [].slice.call(document.querySelectorAll('.costsvg'));
   if (!sel || !svgs.length) return;
-  // Display order and sort keys. Physical SVG rows use data-idx 0..12.
+  // Display order and sort keys. Physical SVG rows use data-idx 0..13.
   var DATA = [
+    {m:'Grok 4.6',       tok:4.24, time:20.31},
     {m:'GPT-5.6-sol · CAMEL', tok:1.45, time:7.5},
     {m:'Grok 4.5',       tok:2.55, time:9.22},
     {m:'GPT-5.6-sol · Codex', tok:4.20, time:18.02},
